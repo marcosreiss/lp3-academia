@@ -8,19 +8,16 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema academiadb
 -- -----------------------------------------------------
 
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `academiadb` DEFAULT CHARACTER SET utf8 ;
+USE `academiadb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`aluno`
+-- Table `academiadb`.`aluno`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`aluno` (
+CREATE TABLE IF NOT EXISTS `academiadb`.`aluno` (
   `idaluno` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
   `data_nascimento` DATE NULL,
@@ -32,9 +29,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`instrutor`
+-- Table `academiadb`.`instrutor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`instrutor` (
+CREATE TABLE IF NOT EXISTS `academiadb`.`instrutor` (
   `idinstrutor` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
   `cpf` VARCHAR(45) NULL,
@@ -45,9 +42,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`aula`
+-- Table `academiadb`.`aula`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`aula` (
+CREATE TABLE IF NOT EXISTS `academiadb`.`aula` (
   `idaula` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
   `descricao` VARCHAR(45) NULL,
@@ -59,16 +56,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`aula` (
   INDEX `fk_aula_instrutor_idx` (`idinstrutor` ASC) VISIBLE,
   CONSTRAINT `fk_aula_instrutor`
     FOREIGN KEY (`idinstrutor`)
-    REFERENCES `mydb`.`instrutor` (`idinstrutor`)
+    REFERENCES `academiadb`.`instrutor` (`idinstrutor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`aluno_aula`
+-- Table `academiadb`.`aluno_aula`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`aluno_aula` (
+CREATE TABLE IF NOT EXISTS `academiadb`.`aluno_aula` (
   `aluno_idaluno` INT NOT NULL,
   `aula_idaula` INT NOT NULL,
   `aula_instrutor_idinstrutor` INT NOT NULL,
@@ -77,12 +74,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`aluno_aula` (
   INDEX `fk_aluno_has_aula_aluno1_idx` (`aluno_idaluno` ASC) VISIBLE,
   CONSTRAINT `fk_aluno_has_aula_aluno1`
     FOREIGN KEY (`aluno_idaluno`)
-    REFERENCES `mydb`.`aluno` (`idaluno`)
+    REFERENCES `academiadb`.`aluno` (`idaluno`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_aluno_has_aula_aula1`
     FOREIGN KEY (`aula_idaula` , `aula_instrutor_idinstrutor`)
-    REFERENCES `mydb`.`aula` (`idaula` , `idinstrutor`)
+    REFERENCES `academiadb`.`aula` (`idaula` , `idinstrutor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
