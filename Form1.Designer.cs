@@ -28,12 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            menuStrip1 = new MenuStrip();
+            cadastroToolStripMenuItem = new ToolStripMenuItem();
+            alunoToolStripMenuItem = new ToolStripMenuItem();
+            instrutorToolStripMenuItem = new ToolStripMenuItem();
+            aulasToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = Color.Beige;
+            menuStrip1.Font = new Font("Segoe UI", 11F);
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, aulasToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(830, 38);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alunoToolStripMenuItem, instrutorToolStripMenuItem });
+            cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            cadastroToolStripMenuItem.Size = new Size(115, 34);
+            cadastroToolStripMenuItem.Text = "Cadastro";
+            // 
+            // alunoToolStripMenuItem
+            // 
+            alunoToolStripMenuItem.BackColor = Color.Beige;
+            alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
+            alunoToolStripMenuItem.Size = new Size(270, 38);
+            alunoToolStripMenuItem.Text = "Aluno";
+            alunoToolStripMenuItem.Click += alunoToolStripMenuItem_Click;
+            // 
+            // instrutorToolStripMenuItem
+            // 
+            instrutorToolStripMenuItem.BackColor = Color.Beige;
+            instrutorToolStripMenuItem.Name = "instrutorToolStripMenuItem";
+            instrutorToolStripMenuItem.Size = new Size(270, 38);
+            instrutorToolStripMenuItem.Text = "Instrutor";
+            // 
+            // aulasToolStripMenuItem
+            // 
+            aulasToolStripMenuItem.Name = "aulasToolStripMenuItem";
+            aulasToolStripMenuItem.Size = new Size(80, 34);
+            aulasToolStripMenuItem.Text = "Aulas";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkBlue;
+            ClientSize = new Size(830, 474);
+            Controls.Add(menuStrip1);
+            IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sistema Academia";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem cadastroToolStripMenuItem;
+        private ToolStripMenuItem alunoToolStripMenuItem;
+        private ToolStripMenuItem instrutorToolStripMenuItem;
+        private ToolStripMenuItem aulasToolStripMenuItem;
     }
 }
