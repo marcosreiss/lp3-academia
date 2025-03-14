@@ -36,6 +36,10 @@
             telAlunotxt = new TextBox();
             salvarAlunobtt = new Button();
             cancelarAlunobtt = new Button();
+            nascAlunolbl = new Label();
+            nascAlunoDataTime = new DateTimePicker();
+            label1 = new Label();
+            matrículaAlunoDataTime = new DateTimePicker();
             SuspendLayout();
             // 
             // nomeAlunolbl
@@ -51,24 +55,26 @@
             // nomeAlunotxt
             // 
             nomeAlunotxt.Font = new Font("Segoe UI", 11F);
-            nomeAlunotxt.Location = new Point(113, 43);
+            nomeAlunotxt.Location = new Point(105, 43);
             nomeAlunotxt.Name = "nomeAlunotxt";
-            nomeAlunotxt.Size = new Size(327, 37);
+            nomeAlunotxt.Size = new Size(506, 37);
             nomeAlunotxt.TabIndex = 1;
+            nomeAlunotxt.TextChanged += nomeAlunotxt_TextChanged;
             // 
             // cpfAlunotxt
             // 
             cpfAlunotxt.Font = new Font("Segoe UI", 11F);
-            cpfAlunotxt.Location = new Point(113, 118);
+            cpfAlunotxt.Location = new Point(28, 238);
             cpfAlunotxt.Name = "cpfAlunotxt";
-            cpfAlunotxt.Size = new Size(327, 37);
+            cpfAlunotxt.Size = new Size(262, 37);
             cpfAlunotxt.TabIndex = 3;
+            cpfAlunotxt.TextChanged += cpfAlunotxt_TextChanged;
             // 
             // cpfAlunolbl
             // 
             cpfAlunolbl.AutoSize = true;
             cpfAlunolbl.Font = new Font("Segoe UI", 11F);
-            cpfAlunolbl.Location = new Point(29, 121);
+            cpfAlunolbl.Location = new Point(28, 205);
             cpfAlunolbl.Name = "cpfAlunolbl";
             cpfAlunolbl.Size = new Size(55, 30);
             cpfAlunolbl.TabIndex = 2;
@@ -79,50 +85,94 @@
             // 
             telAlunolbl.AutoSize = true;
             telAlunolbl.Font = new Font("Segoe UI", 11F);
-            telAlunolbl.Location = new Point(29, 193);
+            telAlunolbl.Location = new Point(311, 205);
             telAlunolbl.Name = "telAlunolbl";
             telAlunolbl.Size = new Size(101, 30);
             telAlunolbl.TabIndex = 4;
             telAlunolbl.Text = "Telefone:";
+            telAlunolbl.Click += telAlunolbl_Click;
             // 
             // telAlunotxt
             // 
             telAlunotxt.Font = new Font("Segoe UI", 11F);
-            telAlunotxt.Location = new Point(152, 193);
+            telAlunotxt.Location = new Point(314, 238);
             telAlunotxt.Name = "telAlunotxt";
-            telAlunotxt.Size = new Size(288, 37);
+            telAlunotxt.Size = new Size(296, 37);
             telAlunotxt.TabIndex = 5;
+            telAlunotxt.TextChanged += telAlunotxt_TextChanged;
             // 
             // salvarAlunobtt
             // 
             salvarAlunobtt.BackColor = Color.MidnightBlue;
             salvarAlunobtt.Font = new Font("Segoe UI", 10F);
             salvarAlunobtt.ForeColor = SystemColors.ButtonHighlight;
-            salvarAlunobtt.Location = new Point(499, 403);
+            salvarAlunobtt.Location = new Point(491, 395);
             salvarAlunobtt.Name = "salvarAlunobtt";
-            salvarAlunobtt.Size = new Size(112, 34);
+            salvarAlunobtt.Size = new Size(120, 42);
             salvarAlunobtt.TabIndex = 6;
             salvarAlunobtt.Text = "Salvar";
             salvarAlunobtt.UseVisualStyleBackColor = false;
+            salvarAlunobtt.Click += salvarAlunobtt_Click;
             // 
             // cancelarAlunobtt
             // 
             cancelarAlunobtt.BackColor = Color.MidnightBlue;
             cancelarAlunobtt.Font = new Font("Segoe UI", 10F);
             cancelarAlunobtt.ForeColor = SystemColors.ButtonHighlight;
-            cancelarAlunobtt.Location = new Point(381, 403);
+            cancelarAlunobtt.Location = new Point(373, 395);
             cancelarAlunobtt.Name = "cancelarAlunobtt";
-            cancelarAlunobtt.Size = new Size(112, 34);
+            cancelarAlunobtt.Size = new Size(120, 42);
             cancelarAlunobtt.TabIndex = 7;
             cancelarAlunobtt.Text = "Cancelar";
             cancelarAlunobtt.UseVisualStyleBackColor = false;
+            cancelarAlunobtt.Click += cancelarAlunobtt_Click;
+            // 
+            // nascAlunolbl
+            // 
+            nascAlunolbl.AutoSize = true;
+            nascAlunolbl.Font = new Font("Segoe UI", 11F);
+            nascAlunolbl.Location = new Point(29, 136);
+            nascAlunolbl.Name = "nascAlunolbl";
+            nascAlunolbl.Size = new Size(182, 30);
+            nascAlunolbl.TabIndex = 8;
+            nascAlunolbl.Text = "Data Nascimento:";
+            // 
+            // nascAlunoDataTime
+            // 
+            nascAlunoDataTime.Location = new Point(242, 136);
+            nascAlunoDataTime.Name = "nascAlunoDataTime";
+            nascAlunoDataTime.Size = new Size(300, 31);
+            nascAlunoDataTime.TabIndex = 9;
+            nascAlunoDataTime.ValueChanged += nascAlunoDataTime_ValueChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F);
+            label1.Location = new Point(29, 323);
+            label1.Name = "label1";
+            label1.Size = new Size(157, 30);
+            label1.TabIndex = 10;
+            label1.Text = "Data Matrícula:";
+            // 
+            // matrículaAlunoDataTime
+            // 
+            matrículaAlunoDataTime.Location = new Point(242, 322);
+            matrículaAlunoDataTime.Name = "matrículaAlunoDataTime";
+            matrículaAlunoDataTime.Size = new Size(300, 31);
+            matrículaAlunoDataTime.TabIndex = 11;
+            matrículaAlunoDataTime.ValueChanged += matrículaAlunoDataTime_ValueChanged;
             // 
             // AlunoForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightYellow;
+            BackColor = Color.Khaki;
             ClientSize = new Size(657, 474);
+            Controls.Add(matrículaAlunoDataTime);
+            Controls.Add(label1);
+            Controls.Add(nascAlunoDataTime);
+            Controls.Add(nascAlunolbl);
             Controls.Add(cancelarAlunobtt);
             Controls.Add(salvarAlunobtt);
             Controls.Add(telAlunotxt);
@@ -148,5 +198,9 @@
         private TextBox telAlunotxt;
         private Button salvarAlunobtt;
         private Button cancelarAlunobtt;
+        private Label nascAlunolbl;
+        private DateTimePicker nascAlunoDataTime;
+        private Label label1;
+        private DateTimePicker matrículaAlunoDataTime;
     }
 }
