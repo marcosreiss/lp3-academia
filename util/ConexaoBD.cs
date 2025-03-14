@@ -1,6 +1,6 @@
 ﻿using MySqlConnector;
 
-namespace ProjetoAcademico.util
+namespace lp3_academia.util
 {
     internal class ConexaoBD
     {
