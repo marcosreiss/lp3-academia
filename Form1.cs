@@ -28,20 +28,13 @@ namespace lp3_academia
             instrutorForm.Show();
         }
 
-        public List<Aluno> listaAlunos = new List<Aluno>();
         public List<Instrutor> listaInstrutores = new List<Instrutor>();
         public List<Aula> listaAulas = new List<Aula>();
 
 
         private void alunoListarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (listaAlunos.Count == 0)
-            {
-                MessageBox.Show("Nenhum aluno cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            AlunoListarForm listarForm = new AlunoListarForm(listaAlunos);
+            AlunoListarForm listarForm = new AlunoListarForm();
             listarForm.MdiParent = this; // Define como MDI
             listarForm.Show();
         }

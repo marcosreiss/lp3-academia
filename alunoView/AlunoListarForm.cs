@@ -1,26 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using lp3_academia.Controller;
+using lp3_academia.DTO;
 
 namespace lp3_academia
 {
     public partial class AlunoListarForm : Form
     {
-        public AlunoListarForm(List<Aluno> listaAlunos)
+        private AlunoController alunoController;
+
+        public AlunoListarForm()
         {
             InitializeComponent();
-            CarregarAlunos(listaAlunos);
+            alunoController = new AlunoController();
         }
 
-        private void CarregarAlunos(List<Aluno> listaAlunos)
+        private void AlunoListarForm_Load(object sender, EventArgs e)
         {
-            // Configurar as colunas do DataGridView
+            List<AlunoDTO> listaAlunos = alunoController.ListarAlunos();
+            CarregarAlunos(listaAlunos);
+            
+        }
+
+        private void CarregarAlunos(List<AlunoDTO> listaAlunos)
+        {
+            if (listaAlunos.Count == 0)
+            {
+                MessageBox.Show("Nenhum aluno cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            // Configurar as colunas do DataGridView apenas uma vez
             if (dataGridViewAlunos.Columns.Count == 0)
             {
                 dataGridViewAlunos.Columns.Add("Nome", "Nome");
@@ -34,15 +41,15 @@ namespace lp3_academia
             dataGridViewAlunos.Rows.Clear();
 
             // Adicionar os alunos ao DataGridView
-            foreach (Aluno aluno in listaAlunos)
+            foreach (AlunoDTO aluno in listaAlunos)
             {
-                dataGridViewAlunos.Rows.Add(aluno.Nome, aluno.CPF, aluno.Telefone,
+                dataGridViewAlunos.Rows.Add(aluno.Nome, aluno.Cpf, aluno.Telefone,
                                             aluno.DataNascimento.ToString("dd/MM/yyyy"),
                                             aluno.DataMatricula.ToString("dd/MM/yyyy"));
             }
         }
 
-        private void AlunoListarForm_Load(object sender, EventArgs e)
+        private void dataGridViewAlunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

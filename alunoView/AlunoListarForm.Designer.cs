@@ -36,20 +36,23 @@
             // dataGridViewAlunos
             // 
             dataGridViewAlunos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewAlunos.Location = new Point(12, 12);
+            dataGridViewAlunos.Location = new Point(10, 10);
+            dataGridViewAlunos.Margin = new Padding(2, 2, 2, 2);
             dataGridViewAlunos.Name = "dataGridViewAlunos";
             dataGridViewAlunos.RowHeadersWidth = 62;
-            dataGridViewAlunos.Size = new Size(787, 438);
+            dataGridViewAlunos.Size = new Size(630, 350);
             dataGridViewAlunos.TabIndex = 0;
+            dataGridViewAlunos.CellContentClick += dataGridViewAlunos_CellContentClick;
             // 
             // AlunoListarForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(640, 360);
             Controls.Add(dataGridViewAlunos);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AlunoListarForm";
             Text = "Lista de Alunos";
             Load += AlunoListarForm_Load;
