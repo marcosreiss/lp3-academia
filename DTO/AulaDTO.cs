@@ -12,9 +12,8 @@
 
         public AulaDTO() { }
 
-        public AulaDTO(int idAula, string nome, string descricao, DateTime dataHorarioInicio, DateTime dataHorarioFim, int idInstrutor)
+        public AulaDTO( string nome, string descricao, DateTime dataHorarioInicio, DateTime dataHorarioFim, int idInstrutor)
         {
-            IdAula = idAula;
             Nome = nome;
             Descricao = descricao;
             DataHorarioInicio = dataHorarioInicio;

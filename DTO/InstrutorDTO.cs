@@ -10,9 +10,8 @@
 
         public InstrutorDTO() { }
 
-        public InstrutorDTO(int idInstrutor, string nome, string cpf, string especialidade, DateTime dataContratacao)
+        public InstrutorDTO( string nome, string cpf, string especialidade, DateTime dataContratacao)
         {
-            IdInstrutor = idInstrutor;
             Nome = nome;
             Cpf = cpf;
             Especialidade = especialidade;
