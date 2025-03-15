@@ -1,20 +1,47 @@
-﻿using lp3_academia.Models;
+﻿using lp3_academia.Controller;
+using lp3_academia.DTO;
 
 namespace lp3_academia.instrutorView
 {
     public partial class InstrutorListarForm : Form
     {
-        private List<Instrutor> listaInstrutores;
-        public InstrutorListarForm(List<Instrutor> instrutores)
+
+        private InstrutorController instrutorController;
+        private List<InstrutorDTO> listaInstrutores;
+        public InstrutorListarForm()
         {
             InitializeComponent();
-            this.listaInstrutores = instrutores;
-            CarregarInstrutores(instrutores);
+            instrutorController = new InstrutorController();
+            listaInstrutores = new List<InstrutorDTO>();
         }
 
-        private void CarregarInstrutores(List<Instrutor> listaInstrutores)
+        private void InstrutorListarForm_Load(object sender, EventArgs e)
         {
-            // Configurar as colunas do DataGridView
+            AtualizarListaInstrutores(); // Atualiza a lista ao carregar o formulário
+        }
+
+        public void AtualizarListaInstrutores()
+        {
+            try
+            {
+                listaInstrutores = instrutorController.ListarInstrutores();
+                CarregarInstrutores(listaInstrutores);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar instrutores: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CarregarInstrutores(List<InstrutorDTO> listaInstrutores)
+        {
+            if (listaInstrutores == null || listaInstrutores.Count == 0)
+            {
+                MessageBox.Show("Nenhum instrutor cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Configurar colunas do DataGridView apenas uma vez
             if (dataGridViewInstrutor.Columns.Count == 0)
             {
                 dataGridViewInstrutor.Columns.Add("Id", "ID");
@@ -24,20 +51,20 @@ namespace lp3_academia.instrutorView
                 dataGridViewInstrutor.Columns.Add("Contratacao", "Data de Contratação");
             }
 
-            // Limpar antes de adicionar novos dados
+            // Limpar o DataGridView antes de adicionar novos dados
             dataGridViewInstrutor.Rows.Clear();
 
             // Adicionar os instrutores ao DataGridView
-            foreach (Instrutor instrutor in listaInstrutores)
+            foreach (InstrutorDTO instrutor in listaInstrutores)
             {
-                dataGridViewInstrutor.Rows.Add(instrutor.Id, instrutor.Nome, instrutor.CPF, instrutor.Especialidade,
-                                                 instrutor.DataContratacao.ToString("dd/MM/yyyy"));
+                dataGridViewInstrutor.Rows.Add(
+                    instrutor.IdInstrutor,
+                    instrutor.Nome,
+                    instrutor.Cpf,
+                    instrutor.Especialidade,
+                    instrutor.DataContratacao.ToString("dd/MM/yyyy")
+                );
             }
-        }
-
-        private void InstrutorListar_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

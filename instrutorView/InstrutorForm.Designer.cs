@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             cancelarInstrutorbtt = new Button();
+            cancelarInstrutorbtt.Click += cancelarInstrutorbtt_Click;
             salvarInstrutorbtt = new Button();
+            salvarInstrutorbtt.Click += salvarInstrutorbtt_Click;
             especialidadeInstrutortxt = new TextBox();
             especInstrutorlbl = new Label();
             cpfInstrutortxt = new TextBox();
@@ -63,7 +65,6 @@
             salvarInstrutorbtt.TabIndex = 14;
             salvarInstrutorbtt.Text = "Salvar";
             salvarInstrutorbtt.UseVisualStyleBackColor = false;
-            salvarInstrutorbtt.Click += salvarIntrutorbtt_Click;
             // 
             // especialidadeInstrutortxt
             // 
@@ -72,7 +73,6 @@
             especialidadeInstrutortxt.Name = "especialidadeInstrutortxt";
             especialidadeInstrutortxt.Size = new Size(503, 37);
             especialidadeInstrutortxt.TabIndex = 13;
-            especialidadeInstrutortxt.TextChanged += especialidadeInstrutortxt_TextChanged;
             // 
             // especInstrutorlbl
             // 
@@ -91,7 +91,6 @@
             cpfInstrutortxt.Name = "cpfInstrutortxt";
             cpfInstrutortxt.Size = new Size(419, 37);
             cpfInstrutortxt.TabIndex = 11;
-            cpfInstrutortxt.TextChanged += cpfInstrutortxt_TextChanged;
             // 
             // cpfInstrutorlbl
             // 
@@ -110,7 +109,6 @@
             nomeInstrutortxt.Name = "nomeInstrutortxt";
             nomeInstrutortxt.Size = new Size(419, 37);
             nomeInstrutortxt.TabIndex = 9;
-            nomeInstrutortxt.TextChanged += nomeInstrutortxt_TextChanged;
             // 
             // nomeInstrutorlbl
             // 
@@ -131,7 +129,6 @@
             label1.Size = new Size(185, 30);
             label1.TabIndex = 16;
             label1.Text = "Data Contratação:";
-            label1.Click += label1_Click;
             // 
             // contratacaoInstrutordateTime
             // 
@@ -139,7 +136,6 @@
             contratacaoInstrutordateTime.Name = "contratacaoInstrutordateTime";
             contratacaoInstrutordateTime.Size = new Size(300, 31);
             contratacaoInstrutordateTime.TabIndex = 17;
-            contratacaoInstrutordateTime.ValueChanged += contratacaoInstrutordateTime_ValueChanged;
             // 
             // InstrutorForm
             // 
@@ -159,7 +155,6 @@
             Controls.Add(nomeInstrutorlbl);
             Name = "InstrutorForm";
             Text = "Cadastro Instrutor";
-            Load += InstrutorForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

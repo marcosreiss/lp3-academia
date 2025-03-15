@@ -41,15 +41,9 @@ namespace lp3_academia
 
         private void instrutorListarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (listaInstrutores.Count == 0)
-            {
-                MessageBox.Show("Nenhum instrutor cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            InstrutorListarForm listarInstrutores = new InstrutorListarForm(listaInstrutores);
+            InstrutorListarForm listarInstrutores = new InstrutorListarForm();
             listarInstrutores.MdiParent = this;
             listarInstrutores.Show();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
