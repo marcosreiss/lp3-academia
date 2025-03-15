@@ -101,6 +101,7 @@
             instrutorListarToolStripMenuItem1.Name = "instrutorListarToolStripMenuItem1";
             instrutorListarToolStripMenuItem1.Size = new Size(270, 38);
             instrutorListarToolStripMenuItem1.Text = "Instrutor";
+            instrutorListarToolStripMenuItem1.Click += instrutorListarToolStripMenuItem1_Click;
             // 
             // Form1
             // 
@@ -114,6 +115,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Academia";
+            Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

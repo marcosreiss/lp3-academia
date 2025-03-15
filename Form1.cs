@@ -1,4 +1,8 @@
 
+using lp3_academia.instrutorView;
+using lp3_academia.Models;
+
+
 namespace lp3_academia
 {
     public partial class Form1 : Form
@@ -24,6 +28,8 @@ namespace lp3_academia
         }
 
         public List<Aluno> listaAlunos = new List<Aluno>();
+        public List<Instrutor> listaInstrutores = new List<Instrutor>();
+
 
         private void alunoListarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -36,6 +42,19 @@ namespace lp3_academia
             AlunoListarForm listarForm = new AlunoListarForm(listaAlunos);
             listarForm.MdiParent = this; // Define como MDI
             listarForm.Show();
+        }
+
+        private void instrutorListarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InstrutorListarForm listarInstrutores = new InstrutorListarForm(listaInstrutores);
+            listarInstrutores.MdiParent = this;
+            listarInstrutores.Show();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
