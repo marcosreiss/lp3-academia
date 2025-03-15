@@ -159,6 +159,7 @@
             Controls.Add(nomeInstrutorlbl);
             Name = "InstrutorForm";
             Text = "Cadastro Instrutor";
+            Load += InstrutorForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

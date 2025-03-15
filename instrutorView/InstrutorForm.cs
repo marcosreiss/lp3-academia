@@ -69,5 +69,10 @@ namespace lp3_academia
             cpfInstrutortxt.Clear();
             especialidadeInstrutortxt.Clear();
         }
+
+        private void InstrutorForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

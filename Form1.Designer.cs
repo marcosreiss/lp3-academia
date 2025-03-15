@@ -33,6 +33,8 @@
             alunoToolStripMenuItem = new ToolStripMenuItem();
             instrutorToolStripMenuItem = new ToolStripMenuItem();
             aulasToolStripMenuItem = new ToolStripMenuItem();
+            criarAulaToolStripMenuItem = new ToolStripMenuItem();
+            listarAulasToolStripMenuItem = new ToolStripMenuItem();
             lIstarToolStripMenuItem = new ToolStripMenuItem();
             alunoListarToolStripMenuItem1 = new ToolStripMenuItem();
             instrutorListarToolStripMenuItem1 = new ToolStripMenuItem();
@@ -76,9 +78,26 @@
             // 
             // aulasToolStripMenuItem
             // 
+            aulasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { criarAulaToolStripMenuItem, listarAulasToolStripMenuItem });
             aulasToolStripMenuItem.Name = "aulasToolStripMenuItem";
             aulasToolStripMenuItem.Size = new Size(80, 34);
             aulasToolStripMenuItem.Text = "Aulas";
+            // 
+            // criarAulaToolStripMenuItem
+            // 
+            criarAulaToolStripMenuItem.BackColor = Color.Beige;
+            criarAulaToolStripMenuItem.Name = "criarAulaToolStripMenuItem";
+            criarAulaToolStripMenuItem.Size = new Size(270, 38);
+            criarAulaToolStripMenuItem.Text = "Criar Aula";
+            criarAulaToolStripMenuItem.Click += criarAulaToolStripMenuItem_Click;
+            // 
+            // listarAulasToolStripMenuItem
+            // 
+            listarAulasToolStripMenuItem.BackColor = Color.Beige;
+            listarAulasToolStripMenuItem.Name = "listarAulasToolStripMenuItem";
+            listarAulasToolStripMenuItem.Size = new Size(270, 38);
+            listarAulasToolStripMenuItem.Text = "Listar Aulas";
+            listarAulasToolStripMenuItem.Click += listarAulasToolStripMenuItem_Click;
             // 
             // lIstarToolStripMenuItem
             // 
@@ -132,5 +151,7 @@
         private ToolStripMenuItem lIstarToolStripMenuItem;
         private ToolStripMenuItem alunoListarToolStripMenuItem1;
         private ToolStripMenuItem instrutorListarToolStripMenuItem1;
+        private ToolStripMenuItem criarAulaToolStripMenuItem;
+        private ToolStripMenuItem listarAulasToolStripMenuItem;
     }
 }

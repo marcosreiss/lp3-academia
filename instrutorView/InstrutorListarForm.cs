@@ -26,6 +26,7 @@ namespace lp3_academia.instrutorView
             // Configurar as colunas do DataGridView
             if (dataGridViewInstrutor.Columns.Count == 0)
             {
+                dataGridViewInstrutor.Columns.Add("Id", "ID");
                 dataGridViewInstrutor.Columns.Add("Nome", "Nome");
                 dataGridViewInstrutor.Columns.Add("CPF", "CPF");
                 dataGridViewInstrutor.Columns.Add("Especialidade", "Especialidade");
@@ -38,7 +39,7 @@ namespace lp3_academia.instrutorView
             // Adicionar os instrutores ao DataGridView
             foreach (Instrutor instrutor in listaInstrutores)
             {
-                dataGridViewInstrutor.Rows.Add(instrutor.Nome, instrutor.CPF, instrutor.Especialidade,
+                dataGridViewInstrutor.Rows.Add(instrutor.Id, instrutor.Nome, instrutor.CPF, instrutor.Especialidade,
                                                  instrutor.DataContratacao.ToString("dd/MM/yyyy"));
             }
         }

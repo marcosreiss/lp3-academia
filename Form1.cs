@@ -1,4 +1,5 @@
 
+using lp3_academia.aulaView;
 using lp3_academia.instrutorView;
 using lp3_academia.Models;
 
@@ -29,6 +30,7 @@ namespace lp3_academia
 
         public List<Aluno> listaAlunos = new List<Aluno>();
         public List<Instrutor> listaInstrutores = new List<Instrutor>();
+        public List<Aula> listaAulas = new List<Aula>();
 
 
         private void alunoListarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -46,6 +48,11 @@ namespace lp3_academia
 
         private void instrutorListarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            if (listaInstrutores.Count == 0)
+            {
+                MessageBox.Show("Nenhum instrutor cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             InstrutorListarForm listarInstrutores = new InstrutorListarForm(listaInstrutores);
             listarInstrutores.MdiParent = this;
             listarInstrutores.Show();
@@ -55,6 +62,25 @@ namespace lp3_academia
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void criarAulaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CriarAulaForm criarAulaForm = new CriarAulaForm(listaAulas); // Passando a lista de Form1
+            criarAulaForm.MdiParent = this;
+            criarAulaForm.Show();
+        }
+
+        private void listarAulasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listaAulas.Count == 0)
+            {
+                MessageBox.Show("Nenhuma aula cadastrada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            AulaListarForm listarAula = new AulaListarForm(listaAulas);
+            listarAula.MdiParent = this;
+            listarAula.Show();
         }
     }
 }
