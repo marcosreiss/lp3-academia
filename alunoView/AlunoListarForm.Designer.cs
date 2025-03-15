@@ -42,7 +42,6 @@
             dataGridViewAlunos.RowHeadersWidth = 62;
             dataGridViewAlunos.Size = new Size(630, 350);
             dataGridViewAlunos.TabIndex = 0;
-            dataGridViewAlunos.CellContentClick += dataGridViewAlunos_CellContentClick;
             // 
             // AlunoListarForm
             // 

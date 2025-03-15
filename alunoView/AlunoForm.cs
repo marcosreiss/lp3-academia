@@ -1,4 +1,6 @@
-﻿namespace lp3_academia
+﻿using lp3_academia.DTO;
+
+namespace lp3_academia
 {
     public partial class AlunoForm : Form
     {
@@ -47,7 +49,7 @@
                 return;
             }
 
-            Aluno novoAluno = new Aluno(nome, cpf, telefone, dataNascimento, dataMatricula);
+            AlunoDTO novoAluno = new AlunoDTO(nome, dataNascimento, cpf, telefone,  dataMatricula);
 
             // adicionar aluno na lista do Form1
             Form1 formPrincipal = (Form1)Application.OpenForms["Form1"];

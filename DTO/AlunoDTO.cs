@@ -1,6 +1,6 @@
 ﻿namespace lp3_academia.DTO
 {
-    internal class AlunoDTO
+    public class AlunoDTO
     {
         public int IdAluno { get; set; }
         public string Nome { get; set; }
@@ -12,9 +12,8 @@
 
         public AlunoDTO() { }
 
-        public AlunoDTO(int idAluno, string nome, DateTime dataNascimento, string cpf, string telefone, DateTime dataMatricula)
+        public AlunoDTO( string nome, DateTime dataNascimento, string cpf, string telefone, DateTime dataMatricula)
         {
-            IdAluno = idAluno;
             Nome = nome;
             DataNascimento = dataNascimento;
             Cpf = cpf;

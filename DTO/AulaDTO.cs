@@ -1,6 +1,6 @@
 ﻿namespace lp3_academia.DTO
 {
-    internal class AulaDTO
+    public class AulaDTO
     {
         public int IdAula { get; set; }
         public string Nome { get; set; }
