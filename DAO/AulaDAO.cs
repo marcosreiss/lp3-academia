@@ -22,14 +22,14 @@ namespace lp3_academia.DAO
         {
             con.Open();
             sql = "INSERT INTO aula (nome, descricao, data_horario_inicio, data_horario_fim, idinstrutor) " +
-                  "VALUES (@nome, @descricao, @inicio, @fim, @idinstrutor)";
+                  "VALUES (@nome, @descricao, @inicio, @fim, (SELECT idinstrutor FROM instrutor WHERE nome = @nameInstrutor LIMIT 1))";
 
             envelope = new MySqlCommand(sql, con);
             envelope.Parameters.AddWithValue("@nome", aula.Nome);
             envelope.Parameters.AddWithValue("@descricao", aula.Descricao);
             envelope.Parameters.AddWithValue("@inicio", aula.DataHorarioInicio);
             envelope.Parameters.AddWithValue("@fim", aula.DataHorarioFim);
-            envelope.Parameters.AddWithValue("@idinstrutor", aula.IdInstrutor);
+            envelope.Parameters.AddWithValue("@nameInstrutor", aula.NameInstrutor);
 
             envelope.Prepare();
             int resultado = envelope.ExecuteNonQuery();
@@ -41,7 +41,11 @@ namespace lp3_academia.DAO
         {
             listaAulas = new List<AulaDTO>();
             con.Open();
-            sql = "SELECT * FROM aula";
+
+            // Ajustamos a query para trazer o nome do instrutor em vez do ID
+            sql = "SELECT a.idaula, a.nome, a.descricao, a.data_horario_inicio, a.data_horario_fim, i.nome AS nomeInstrutor " +
+                  "FROM aula a " +
+                  "INNER JOIN instrutor i ON a.idinstrutor = i.idinstrutor";
 
             envelope = new MySqlCommand(sql, con);
             envelope.Prepare();
@@ -56,7 +60,7 @@ namespace lp3_academia.DAO
                     Descricao = cursor.GetString("descricao"),
                     DataHorarioInicio = cursor.GetDateTime("data_horario_inicio"),
                     DataHorarioFim = cursor.GetDateTime("data_horario_fim"),
-                    IdInstrutor = cursor.GetInt32("idinstrutor")
+                    NameInstrutor = cursor.GetString("nomeInstrutor") // Agora pega o nome do instrutor corretamente
                 };
                 listaAulas.Add(aula);
             }

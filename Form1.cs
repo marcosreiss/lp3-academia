@@ -28,7 +28,6 @@ namespace lp3_academia
             instrutorForm.Show();
         }
 
-        public List<Instrutor> listaInstrutores = new List<Instrutor>();
         public List<Aula> listaAulas = new List<Aula>();
 
 
