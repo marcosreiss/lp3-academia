@@ -1,15 +1,12 @@
 ﻿using lp3_academia.Controller;
 using lp3_academia.DTO;
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace lp3_academia
 {
     public partial class AlunoListarForm : Form
     {
         private AlunoController alunoController;
-        public List<AlunoDTO> listaAlunos { get; set; }
+        private List<AlunoDTO> listaAlunos; // Agora é privada
 
         public AlunoListarForm()
         {
@@ -19,6 +16,11 @@ namespace lp3_academia
         }
 
         private void AlunoListarForm_Load(object sender, EventArgs e)
+        {
+            AtualizarListaAlunos(); // Atualiza os alunos ao carregar a tela
+        }
+
+        public void AtualizarListaAlunos()
         {
             try
             {
@@ -42,6 +44,7 @@ namespace lp3_academia
             // Configurar colunas do DataGridView apenas uma vez
             if (dataGridViewAlunos.Columns.Count == 0)
             {
+                dataGridViewAlunos.Columns.Add("ID", "ID");
                 dataGridViewAlunos.Columns.Add("Nome", "Nome");
                 dataGridViewAlunos.Columns.Add("CPF", "CPF");
                 dataGridViewAlunos.Columns.Add("Telefone", "Telefone");
@@ -56,6 +59,7 @@ namespace lp3_academia
             foreach (AlunoDTO aluno in listaAlunos)
             {
                 dataGridViewAlunos.Rows.Add(
+                    aluno.IdAluno,
                     aluno.Nome,
                     aluno.Cpf,
                     aluno.Telefone,

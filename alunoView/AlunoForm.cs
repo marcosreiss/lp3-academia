@@ -1,37 +1,15 @@
-﻿using lp3_academia.DTO;
+﻿using lp3_academia.Controller;
 
 namespace lp3_academia
 {
     public partial class AlunoForm : Form
     {
+        private AlunoController alunoController;
+
         public AlunoForm()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nomeAlunotxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cpfAlunotxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void telAlunotxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cancelarAlunobtt_Click(object sender, EventArgs e)
-        {
-
+            alunoController = new AlunoController();
         }
 
         private void salvarAlunobtt_Click(object sender, EventArgs e)
@@ -42,43 +20,40 @@ namespace lp3_academia
             DateTime dataNascimento = nascAlunoDataTime.Value;
             DateTime dataMatricula = matrículaAlunoDataTime.Value;
 
-            // verificar se todos os campos estão preenchidos
+            // Verificar se todos os campos estão preenchidos
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(cpf) || string.IsNullOrEmpty(telefone))
             {
                 MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            AlunoDTO novoAluno = new AlunoDTO(nome, dataNascimento, cpf, telefone,  dataMatricula);
+            // Criar e salvar aluno no banco
+            int resultado = alunoController.SalvarAluno(nome, dataNascimento, cpf, telefone, dataMatricula);
 
-            // adicionar aluno na lista do Form1
-            Form1 formPrincipal = (Form1)Application.OpenForms["Form1"];
-            //AlunoListarForm.listaAlunos.Add(novoAluno);
+            if (resultado > 0)
+            {
+                MessageBox.Show("Aluno cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            MessageBox.Show("Aluno cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Atualizar lista no AlunoListarForm se estiver aberto
+                var formListar = Application.OpenForms.OfType<AlunoListarForm>().FirstOrDefault();
+                formListar?.AtualizarListaAlunos();
 
-            // limpar os campos após salvar
-            nomeAlunotxt.Clear();
-            cpfAlunotxt.Clear();
-            telAlunotxt.Clear();
-            nascAlunoDataTime.Value = DateTime.Today;
-            matrículaAlunoDataTime.Value = DateTime.Today;
-
+                // Limpar os campos após salvar
+                nomeAlunotxt.Clear();
+                cpfAlunotxt.Clear();
+                telAlunotxt.Clear();
+                nascAlunoDataTime.Value = DateTime.Today;
+                matrículaAlunoDataTime.Value = DateTime.Today;
+            }
+            else
+            {
+                MessageBox.Show("Erro ao cadastrar aluno!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void telAlunolbl_Click(object sender, EventArgs e)
+        private void cancelarAlunobtt_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void nascAlunoDataTime_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void matrículaAlunoDataTime_ValueChanged(object sender, EventArgs e)
-        {
-
+            this.Close(); // Fecha o formulário sem salvar
         }
     }
 }

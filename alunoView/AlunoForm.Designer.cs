@@ -59,7 +59,6 @@
             nomeAlunotxt.Name = "nomeAlunotxt";
             nomeAlunotxt.Size = new Size(506, 37);
             nomeAlunotxt.TabIndex = 1;
-            nomeAlunotxt.TextChanged += nomeAlunotxt_TextChanged;
             // 
             // cpfAlunotxt
             // 
@@ -68,7 +67,6 @@
             cpfAlunotxt.Name = "cpfAlunotxt";
             cpfAlunotxt.Size = new Size(262, 37);
             cpfAlunotxt.TabIndex = 3;
-            cpfAlunotxt.TextChanged += cpfAlunotxt_TextChanged;
             // 
             // cpfAlunolbl
             // 
@@ -79,7 +77,6 @@
             cpfAlunolbl.Size = new Size(55, 30);
             cpfAlunolbl.TabIndex = 2;
             cpfAlunolbl.Text = "CPF:";
-            cpfAlunolbl.Click += label2_Click;
             // 
             // telAlunolbl
             // 
@@ -90,7 +87,6 @@
             telAlunolbl.Size = new Size(101, 30);
             telAlunolbl.TabIndex = 4;
             telAlunolbl.Text = "Telefone:";
-            telAlunolbl.Click += telAlunolbl_Click;
             // 
             // telAlunotxt
             // 
@@ -99,7 +95,6 @@
             telAlunotxt.Name = "telAlunotxt";
             telAlunotxt.Size = new Size(296, 37);
             telAlunotxt.TabIndex = 5;
-            telAlunotxt.TextChanged += telAlunotxt_TextChanged;
             // 
             // salvarAlunobtt
             // 
@@ -143,7 +138,6 @@
             nascAlunoDataTime.Name = "nascAlunoDataTime";
             nascAlunoDataTime.Size = new Size(300, 31);
             nascAlunoDataTime.TabIndex = 9;
-            nascAlunoDataTime.ValueChanged += nascAlunoDataTime_ValueChanged;
             // 
             // label1
             // 
@@ -161,7 +155,6 @@
             matrículaAlunoDataTime.Name = "matrículaAlunoDataTime";
             matrículaAlunoDataTime.Size = new Size(300, 31);
             matrículaAlunoDataTime.TabIndex = 11;
-            matrículaAlunoDataTime.ValueChanged += matrículaAlunoDataTime_ValueChanged;
             // 
             // AlunoForm
             // 

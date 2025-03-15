@@ -18,7 +18,7 @@ USE `academiadb` ;
 -- Table `academiadb`.`aluno`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `academiadb`.`aluno` (
-  `idaluno` INT NOT NULL,
+  `idaluno` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NULL,
   `data_nascimento` DATE NULL,
   `cpf` VARCHAR(45) NULL,
@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 -- Table `academiadb`.`instrutor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `academiadb`.`instrutor` (
-  `idinstrutor` INT NOT NULL,
+  `idinstrutor` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NULL,
   `cpf` VARCHAR(45) NULL,
   `especialiade` VARCHAR(45) NULL,
@@ -45,7 +45,7 @@ ENGINE = InnoDB;
 -- Table `academiadb`.`aula`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `academiadb`.`aula` (
-  `idaula` INT NOT NULL,
+  `idaula` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NULL,
   `descricao` VARCHAR(45) NULL,
   `data_horario_inicio` DATETIME NULL,
