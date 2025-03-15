@@ -1,61 +1,60 @@
-﻿using lp3_academia.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using lp3_academia.Controller;
+using lp3_academia.DTO;
 
 namespace lp3_academia.aulaView
 {
     public partial class CriarAulaForm : Form
     {
-        private List<Aula> listaAulas;
+        private AulaController aulaController;
+        private InstrutorController instrutorController;
+        private AlunoController alunoController;
+        private List<InstrutorDTO> listaInstrutores;
+        private List<AlunoDTO> listaAlunos;
 
-        public CriarAulaForm(List<Aula> aulas)
+        public CriarAulaForm()
         {
             InitializeComponent();
-            this.listaAulas = aulas;
-        }
+            aulaController = new AulaController();
+            instrutorController = new InstrutorController();
+            alunoController = new AlunoController();
+            listaInstrutores = new List<InstrutorDTO>();
+            listaAlunos = new List<AlunoDTO>();
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nomeAulatxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void descAulatxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtIniciocmbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtFimcmbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void idInstrutortxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CriarAulaForm_Load(object sender, EventArgs e)
-        {
+            CarregarInstrutores();
+            CarregarAlunos();
             PreencherHorariosComboBox();
-
         }
+
+        private void CarregarInstrutores()
+        {
+            try
+            {
+                listaInstrutores = instrutorController.ListarInstrutores();
+                instrutorcmb.DataSource = listaInstrutores;
+                instrutorcmb.DisplayMember = "Nome";   // Exibe o nome
+                instrutorcmb.ValueMember = "IdInstrutor";  // Internamente armazena o ID
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar instrutores: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CarregarAlunos()
+        {
+            try
+            {
+                listaAlunos = alunoController.ListarAlunos();
+                participantesclb.DataSource = listaAlunos;
+                participantesclb.DisplayMember = "Nome";  // Exibe o nome
+                participantesclb.ValueMember = "IdAluno";  // Internamente armazena o ID
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar alunos: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void PreencherHorariosComboBox()
         {
             dtIniciocmbox.Items.Clear();
@@ -76,7 +75,7 @@ namespace lp3_academia.aulaView
                 string.IsNullOrWhiteSpace(descAulatxt.Text) ||
                 dtIniciocmbox.SelectedItem == null ||
                 dtFimcmbox.SelectedItem == null ||
-                string.IsNullOrWhiteSpace(idInstrutortxt.Text))
+                instrutorcmb.SelectedItem == null)
             {
                 MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -89,31 +88,59 @@ namespace lp3_academia.aulaView
                 return;
             }
 
-            if (!int.TryParse(idInstrutortxt.Text, out int idInstrutor))
+            int idInstrutorSelecionado = Convert.ToInt32(instrutorcmb.SelectedValue);
+
+            // Captura os IDs dos alunos selecionados
+            List<int> alunosSelecionados = new List<int>();
+            foreach (AlunoDTO aluno in participantesclb.CheckedItems)
             {
-                MessageBox.Show("ID do instrutor inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                alunosSelecionados.Add(aluno.IdAluno);
+            }
+
+            if (alunosSelecionados.Count == 0)
+            {
+                MessageBox.Show("Selecione pelo menos um aluno!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            Aula novaAula = new Aula
+            // Criar a aula com os dados informados
+            AulaDTO novaAula = new AulaDTO
             {
-                Id = listaAulas.Count + 1,
                 Nome = nomeAulatxt.Text,
                 Descricao = descAulatxt.Text,
-                DataInicio = DateTime.Today.Add(horaInicio),
-                DataFim = DateTime.Today.Add(horaFim),
-                IdInstrutor = idInstrutor
+                DataHorarioInicio = DateTime.Today.Add(horaInicio),
+                DataHorarioFim = DateTime.Today.Add(horaFim),
+                NameInstrutor = instrutorcmb.Text, // Nome do instrutor
+                AlunosIds = alunosSelecionados  // IDs dos alunos selecionados
             };
 
-            listaAulas.Add(novaAula);
-            MessageBox.Show("Aula cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Salvar a aula no banco de dados
+            int resultado = aulaController.SalvarAula(novaAula);
 
-            nomeAulatxt.Clear();
-            descAulatxt.Clear();
-            idInstrutortxt.Clear();
-            dtIniciocmbox.SelectedIndex = -1;
-            dtFimcmbox.SelectedIndex = -1;
+            if (resultado > 0)
+            {
+                MessageBox.Show("Aula cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpar os campos após salvar
+                nomeAulatxt.Clear();
+                descAulatxt.Clear();
+                dtIniciocmbox.SelectedIndex = -1;
+                dtFimcmbox.SelectedIndex = -1;
+                instrutorcmb.SelectedIndex = -1;
+                for (int i = 0; i < participantesclb.Items.Count; i++)
+                {
+                    participantesclb.SetItemChecked(i, false);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Erro ao cadastrar aula!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        private void cancelarAulabtt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

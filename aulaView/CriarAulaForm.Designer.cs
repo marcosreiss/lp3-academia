@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CriarAulaForm));
             groupBox1 = new GroupBox();
-            idInstrutortxt = new TextBox();
+            participantesclb = new CheckedListBox();
+            label1 = new Label();
+            instrutorcmb = new ComboBox();
             idInstrutorlbl = new Label();
             dtFimcmbox = new ComboBox();
             dtFimlbl = new Label();
@@ -48,7 +50,9 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(idInstrutortxt);
+            groupBox1.Controls.Add(participantesclb);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(instrutorcmb);
             groupBox1.Controls.Add(idInstrutorlbl);
             groupBox1.Controls.Add(dtFimcmbox);
             groupBox1.Controls.Add(dtFimlbl);
@@ -59,115 +63,140 @@
             groupBox1.Controls.Add(descAulalbl);
             groupBox1.Controls.Add(nomeAulatxt);
             groupBox1.Controls.Add(aulaNomelbl);
-            groupBox1.Location = new Point(21, 12);
+            groupBox1.Location = new Point(17, 10);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(750, 348);
+            groupBox1.Padding = new Padding(2);
+            groupBox1.Size = new Size(600, 504);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Aula";
-            groupBox1.Enter += groupBox1_Enter;
             // 
-            // idInstrutortxt
+            // participantesclb
             // 
-            idInstrutortxt.Font = new Font("Segoe UI", 11F);
-            idInstrutortxt.Location = new Point(173, 277);
-            idInstrutortxt.Name = "idInstrutortxt";
-            idInstrutortxt.Size = new Size(465, 37);
-            idInstrutortxt.TabIndex = 11;
-            idInstrutortxt.TextChanged += idInstrutortxt_TextChanged;
+            participantesclb.FormattingEnabled = true;
+            participantesclb.Location = new Point(226, 288);
+            participantesclb.Name = "participantesclb";
+            participantesclb.Size = new Size(185, 136);
+            participantesclb.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F);
+            label1.Location = new Point(22, 288);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(187, 25);
+            label1.TabIndex = 12;
+            label1.Text = "Alunos Participantes:";
+            // 
+            // instrutorcmb
+            // 
+            instrutorcmb.FormattingEnabled = true;
+            instrutorcmb.Location = new Point(152, 225);
+            instrutorcmb.Name = "instrutorcmb";
+            instrutorcmb.Size = new Size(151, 28);
+            instrutorcmb.TabIndex = 11;
             // 
             // idInstrutorlbl
             // 
             idInstrutorlbl.AutoSize = true;
             idInstrutorlbl.Font = new Font("Segoe UI", 11F);
-            idInstrutorlbl.Location = new Point(28, 280);
+            idInstrutorlbl.Location = new Point(22, 224);
+            idInstrutorlbl.Margin = new Padding(2, 0, 2, 0);
             idInstrutorlbl.Name = "idInstrutorlbl";
-            idInstrutorlbl.Size = new Size(125, 30);
+            idInstrutorlbl.Size = new Size(88, 25);
             idInstrutorlbl.TabIndex = 10;
-            idInstrutorlbl.Text = "Id Instrutor:";
+            idInstrutorlbl.Text = "Instrutor:";
             // 
             // dtFimcmbox
             // 
             dtFimcmbox.FormattingEnabled = true;
-            dtFimcmbox.Location = new Point(352, 222);
+            dtFimcmbox.Location = new Point(282, 178);
+            dtFimcmbox.Margin = new Padding(2);
             dtFimcmbox.Name = "dtFimcmbox";
-            dtFimcmbox.Size = new Size(286, 33);
+            dtFimcmbox.Size = new Size(230, 28);
             dtFimcmbox.TabIndex = 9;
-            dtFimcmbox.SelectedIndexChanged += dtFimcmbox_SelectedIndexChanged;
             // 
             // dtFimlbl
             // 
             dtFimlbl.AutoSize = true;
             dtFimlbl.Font = new Font("Segoe UI", 11F);
-            dtFimlbl.Location = new Point(352, 189);
+            dtFimlbl.Location = new Point(282, 151);
+            dtFimlbl.Margin = new Padding(2, 0, 2, 0);
             dtFimlbl.Name = "dtFimlbl";
-            dtFimlbl.Size = new Size(135, 30);
+            dtFimlbl.Size = new Size(117, 25);
             dtFimlbl.TabIndex = 8;
             dtFimlbl.Text = "Horário fim: ";
             // 
             // dtIniciocmbox
             // 
             dtIniciocmbox.FormattingEnabled = true;
-            dtIniciocmbox.Location = new Point(28, 222);
+            dtIniciocmbox.Location = new Point(22, 178);
+            dtIniciocmbox.Margin = new Padding(2);
             dtIniciocmbox.Name = "dtIniciocmbox";
-            dtIniciocmbox.Size = new Size(272, 33);
+            dtIniciocmbox.Size = new Size(218, 28);
             dtIniciocmbox.TabIndex = 7;
-            dtIniciocmbox.SelectedIndexChanged += dtIniciocmbox_SelectedIndexChanged;
             // 
             // dtIniciolbl
             // 
             dtIniciolbl.AutoSize = true;
             dtIniciolbl.Font = new Font("Segoe UI", 11F);
-            dtIniciolbl.Location = new Point(28, 189);
+            dtIniciolbl.Location = new Point(22, 151);
+            dtIniciolbl.Margin = new Padding(2, 0, 2, 0);
             dtIniciolbl.Name = "dtIniciolbl";
-            dtIniciolbl.Size = new Size(154, 30);
+            dtIniciolbl.Size = new Size(136, 25);
             dtIniciolbl.TabIndex = 6;
             dtIniciolbl.Text = "Horário início: ";
             // 
             // descAulatxt
             // 
             descAulatxt.Font = new Font("Segoe UI", 11F);
-            descAulatxt.Location = new Point(142, 134);
+            descAulatxt.Location = new Point(114, 107);
+            descAulatxt.Margin = new Padding(2);
             descAulatxt.Name = "descAulatxt";
-            descAulatxt.Size = new Size(496, 37);
+            descAulatxt.Size = new Size(398, 32);
             descAulatxt.TabIndex = 5;
-            descAulatxt.TextChanged += descAulatxt_TextChanged;
             // 
             // aulaTipolbl
             // 
             aulaTipolbl.AutoSize = true;
             aulaTipolbl.Font = new Font("Segoe UI", 11F);
-            aulaTipolbl.Location = new Point(28, 134);
+            aulaTipolbl.Location = new Point(22, 107);
+            aulaTipolbl.Margin = new Padding(2, 0, 2, 0);
             aulaTipolbl.Name = "aulaTipolbl";
-            aulaTipolbl.Size = new Size(0, 30);
+            aulaTipolbl.Size = new Size(0, 25);
             aulaTipolbl.TabIndex = 4;
             // 
             // descAulalbl
             // 
             descAulalbl.AutoSize = true;
             descAulalbl.Font = new Font("Segoe UI", 11F);
-            descAulalbl.Location = new Point(28, 134);
+            descAulalbl.Location = new Point(22, 107);
+            descAulalbl.Margin = new Padding(2, 0, 2, 0);
             descAulalbl.Name = "descAulalbl";
-            descAulalbl.Size = new Size(117, 30);
+            descAulalbl.Size = new Size(103, 25);
             descAulalbl.TabIndex = 2;
             descAulalbl.Text = "Descrição: ";
             // 
             // nomeAulatxt
             // 
             nomeAulatxt.Font = new Font("Segoe UI", 11F);
-            nomeAulatxt.Location = new Point(142, 61);
+            nomeAulatxt.Location = new Point(114, 49);
+            nomeAulatxt.Margin = new Padding(2);
             nomeAulatxt.Name = "nomeAulatxt";
-            nomeAulatxt.Size = new Size(496, 37);
+            nomeAulatxt.Size = new Size(398, 32);
             nomeAulatxt.TabIndex = 1;
-            nomeAulatxt.TextChanged += nomeAulatxt_TextChanged;
             // 
             // aulaNomelbl
             // 
             aulaNomelbl.AutoSize = true;
             aulaNomelbl.Font = new Font("Segoe UI", 11F);
-            aulaNomelbl.Location = new Point(28, 61);
+            aulaNomelbl.Location = new Point(22, 49);
+            aulaNomelbl.Margin = new Padding(2, 0, 2, 0);
             aulaNomelbl.Name = "aulaNomelbl";
-            aulaNomelbl.Size = new Size(84, 30);
+            aulaNomelbl.Size = new Size(72, 25);
             aulaNomelbl.TabIndex = 0;
             aulaNomelbl.Text = "Nome: ";
             // 
@@ -176,21 +205,24 @@
             cancelarAulabtt.BackColor = Color.MidnightBlue;
             cancelarAulabtt.Font = new Font("Segoe UI", 10F);
             cancelarAulabtt.ForeColor = SystemColors.ButtonHighlight;
-            cancelarAulabtt.Location = new Point(477, 380);
+            cancelarAulabtt.Location = new Point(421, 530);
+            cancelarAulabtt.Margin = new Padding(2);
             cancelarAulabtt.Name = "cancelarAulabtt";
-            cancelarAulabtt.Size = new Size(120, 42);
+            cancelarAulabtt.Size = new Size(96, 34);
             cancelarAulabtt.TabIndex = 8;
             cancelarAulabtt.Text = "Cancelar";
             cancelarAulabtt.UseVisualStyleBackColor = false;
+            cancelarAulabtt.Click += cancelarAulabtt_Click;
             // 
             // salvarAulabtt
             // 
             salvarAulabtt.BackColor = Color.MidnightBlue;
             salvarAulabtt.Font = new Font("Segoe UI", 10F);
             salvarAulabtt.ForeColor = SystemColors.ButtonHighlight;
-            salvarAulabtt.Location = new Point(620, 380);
+            salvarAulabtt.Location = new Point(521, 530);
+            salvarAulabtt.Margin = new Padding(2);
             salvarAulabtt.Name = "salvarAulabtt";
-            salvarAulabtt.Size = new Size(120, 42);
+            salvarAulabtt.Size = new Size(96, 34);
             salvarAulabtt.TabIndex = 9;
             salvarAulabtt.Text = "Salvar";
             salvarAulabtt.UseVisualStyleBackColor = false;
@@ -198,17 +230,17 @@
             // 
             // CriarAulaForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
-            ClientSize = new Size(783, 450);
+            ClientSize = new Size(705, 692);
             Controls.Add(salvarAulabtt);
             Controls.Add(cancelarAulabtt);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             Name = "CriarAulaForm";
             Text = "Criar Aula";
-            Load += CriarAulaForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -226,9 +258,11 @@
         private Label dtFimlbl;
         private ComboBox dtIniciocmbox;
         private Label dtIniciolbl;
-        private TextBox idInstrutortxt;
         private Label idInstrutorlbl;
         private Button cancelarAulabtt;
         private Button salvarAulabtt;
+        private CheckedListBox participantesclb;
+        private Label label1;
+        private ComboBox instrutorcmb;
     }
 }

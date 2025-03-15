@@ -1,7 +1,6 @@
 
 using lp3_academia.aulaView;
 using lp3_academia.instrutorView;
-using lp3_academia.Models;
 
 
 namespace lp3_academia
@@ -28,9 +27,6 @@ namespace lp3_academia
             instrutorForm.Show();
         }
 
-        public List<Aula> listaAulas = new List<Aula>();
-
-
         private void alunoListarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AlunoListarForm listarForm = new AlunoListarForm();
@@ -52,7 +48,7 @@ namespace lp3_academia
 
         private void criarAulaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CriarAulaForm criarAulaForm = new CriarAulaForm(listaAulas); // Passando a lista de Form1
+            CriarAulaForm criarAulaForm = new CriarAulaForm(); // Passando a lista de Form1
             criarAulaForm.MdiParent = this;
             criarAulaForm.Show();
         }

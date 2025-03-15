@@ -25,7 +25,6 @@ namespace lp3_academia.DAO
             envelope = new MySqlCommand(sql, con);
             envelope.Parameters.AddWithValue("@alunoId", alunoAula.IdAluno);
             envelope.Parameters.AddWithValue("@aulaId", alunoAula.IdAula);
-            envelope.Parameters.AddWithValue("@instrutorId", alunoAula.IdInstrutor);
 
             envelope.Prepare();
             int resultado = envelope.ExecuteNonQuery();

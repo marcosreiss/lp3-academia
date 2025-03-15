@@ -5,15 +5,9 @@ namespace lp3_academia.Controller
 {
     internal class AulaController
     {
-        public int SalvarAula(string nome, string descricao, DateTime dataHorarioInicio, DateTime dataHorarioFim, int idInstrutor)
+        public int SalvarAula(AulaDTO aulaDTO)
         {
-            AulaDTO aulaDTO = new AulaDTO
-            {
-                Nome = nome,
-                Descricao = descricao,
-                DataHorarioInicio = dataHorarioInicio,
-                DataHorarioFim = dataHorarioFim,
-            };
+            
 
             AulaDAO aulaDAO = new AulaDAO();
             return aulaDAO.Salvar(aulaDTO);

@@ -5,13 +5,12 @@ namespace lp3_academia.Controller
 {
     internal class AlunoAulaController
     {
-        public int VincularAlunoAula(int idAluno, int idAula, int idInstrutor)
+        public int VincularAlunoAula(int idAluno, int idAula)
         {
             AlunoAulaDTO alunoAulaDTO = new AlunoAulaDTO
             {
                 IdAluno = idAluno,
                 IdAula = idAula,
-                IdInstrutor = idInstrutor
             };
 
             AlunoAulaDAO alunoAulaDAO = new AlunoAulaDAO();

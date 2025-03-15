@@ -4,15 +4,13 @@
     {
         public int IdAluno { get; set; }
         public int IdAula { get; set; }
-        public int IdInstrutor { get; set; }
 
         public AlunoAulaDTO() { }
 
-        public AlunoAulaDTO(int idAluno, int idAula, int idInstrutor)
+        public AlunoAulaDTO(int idAluno, int idAula)
         {
             IdAluno = idAluno;
             IdAula = idAula;
-            IdInstrutor = idInstrutor;
         }
     }
 }

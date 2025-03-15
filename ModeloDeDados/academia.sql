@@ -68,9 +68,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `academiadb`.`aluno_aula` (
   `aluno_idaluno` INT NOT NULL,
   `aula_idaula` INT NOT NULL,
-  `aula_instrutor_idinstrutor` INT NOT NULL,
-  PRIMARY KEY (`aluno_idaluno`, `aula_idaula`, `aula_instrutor_idinstrutor`),
-  INDEX `fk_aluno_has_aula_aula1_idx` (`aula_idaula` ASC, `aula_instrutor_idinstrutor` ASC) VISIBLE,
+  PRIMARY KEY (`aluno_idaluno`, `aula_idaula`),
+  INDEX `fk_aluno_has_aula_aula1_idx` (`aula_idaula` ASC) VISIBLE,
   INDEX `fk_aluno_has_aula_aluno1_idx` (`aluno_idaluno` ASC) VISIBLE,
   CONSTRAINT `fk_aluno_has_aula_aluno1`
     FOREIGN KEY (`aluno_idaluno`)
@@ -78,8 +77,8 @@ CREATE TABLE IF NOT EXISTS `academiadb`.`aluno_aula` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_aluno_has_aula_aula1`
-    FOREIGN KEY (`aula_idaula` , `aula_instrutor_idinstrutor`)
-    REFERENCES `academiadb`.`aula` (`idaula` , `idinstrutor`)
+    FOREIGN KEY (`aula_idaula`)
+    REFERENCES `academiadb`.`aula` (`idaula`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
