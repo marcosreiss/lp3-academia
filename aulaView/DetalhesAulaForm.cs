@@ -21,6 +21,13 @@ namespace lp3_academia.aulaView
             dataFimTxt.Text = aula.DataHorarioFim.ToString("HH:mm");
             instrutorTxt.Text = aula.NameInstrutor;
 
+            if (participantesDataGridView.Columns.Count == 0)
+            {
+                participantesDataGridView.Columns.Add("Nome", "Nome");
+                participantesDataGridView.Columns.Add("CPF", "CPF");
+                participantesDataGridView.Columns.Add("Telefone", "Telefone");
+            }
+
             // Preencher a lista de alunos no DataGridView (participantes)
             participantesDataGridView.Rows.Clear();
             foreach (AlunoDTO aluno in aula.Alunos)

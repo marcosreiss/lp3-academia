@@ -36,20 +36,24 @@
             // dataGridViewAulas
             // 
             dataGridViewAulas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewAulas.Location = new Point(12, 12);
+            dataGridViewAulas.Location = new Point(10, 10);
+            dataGridViewAulas.Margin = new Padding(2);
             dataGridViewAulas.Name = "dataGridViewAulas";
+            dataGridViewAulas.ReadOnly = true;
             dataGridViewAulas.RowHeadersWidth = 62;
-            dataGridViewAulas.Size = new Size(776, 426);
+            dataGridViewAulas.Size = new Size(1104, 498);
             dataGridViewAulas.TabIndex = 0;
+            dataGridViewAulas.CellContentClick += dataGridViewAulas_CellContentClick;
             // 
             // AulaListarForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1125, 519);
             Controls.Add(dataGridViewAulas);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             Name = "AulaListarForm";
             Text = "Lista de Aulas";
             Load += AulaListarForm_Load;

@@ -13,7 +13,6 @@ namespace lp3_academia.Controller
                 Descricao = descricao,
                 DataHorarioInicio = dataHorarioInicio,
                 DataHorarioFim = dataHorarioFim,
-                IdInstrutor = idInstrutor
             };
 
             AulaDAO aulaDAO = new AulaDAO();

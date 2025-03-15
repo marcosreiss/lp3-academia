@@ -59,12 +59,7 @@ namespace lp3_academia
 
         private void listarAulasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (listaAulas.Count == 0)
-            {
-                MessageBox.Show("Nenhuma aula cadastrada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            AulaListarForm listarAula = new AulaListarForm(listaAulas);
+            AulaListarForm listarAula = new AulaListarForm();
             listarAula.MdiParent = this;
             listarAula.Show();
         }

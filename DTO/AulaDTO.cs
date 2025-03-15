@@ -8,11 +8,12 @@
         public DateTime DataHorarioInicio { get; set; }
         public DateTime DataHorarioFim { get; set; }
         public string NameInstrutor { get; set; }
-        public List<AlunoDTO> Alunos { get; set; } = new List<AlunoDTO>();
+        public List<AlunoDTO> Alunos { get; set; } = new List<AlunoDTO>(); // Lista populada ao listar
+        public List<int> AlunosIds { get; set; } = new List<int>(); // IDs passados ao salvar
 
         public AulaDTO() { }
 
-        public AulaDTO( string nome, string descricao, DateTime dataHorarioInicio, DateTime dataHorarioFim, string nameInstrutor)
+        public AulaDTO(string nome, string descricao, DateTime dataHorarioInicio, DateTime dataHorarioFim, string nameInstrutor)
         {
             Nome = nome;
             Descricao = descricao;
