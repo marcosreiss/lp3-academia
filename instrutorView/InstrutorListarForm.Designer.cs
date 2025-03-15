@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstrutorListarForm));
             dataGridViewInstrutor = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridViewInstrutor).BeginInit();
             SuspendLayout();
@@ -48,6 +49,7 @@
             BackColor = Color.Beige;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridViewInstrutor);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InstrutorListarForm";
             Text = "Lista de Instrutores";
             Load += InstrutorListar_Load;

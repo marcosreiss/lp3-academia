@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CriarAulaForm));
             groupBox1 = new GroupBox();
             idInstrutortxt = new TextBox();
             idInstrutorlbl = new Label();
@@ -204,6 +205,7 @@
             Controls.Add(salvarAulabtt);
             Controls.Add(cancelarAulabtt);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CriarAulaForm";
             Text = "Criar Aula";
             Load += CriarAulaForm_Load;

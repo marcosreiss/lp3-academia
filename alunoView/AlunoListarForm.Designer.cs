@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlunoListarForm));
             dataGridViewAlunos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAlunos).BeginInit();
             SuspendLayout();
@@ -48,6 +49,7 @@
             BackColor = Color.Beige;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridViewAlunos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AlunoListarForm";
             Text = "Lista de Alunos";
             Load += AlunoListarForm_Load;
