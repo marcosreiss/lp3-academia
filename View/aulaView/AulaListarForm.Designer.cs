@@ -35,13 +35,14 @@
             // 
             // dataGridViewAulas
             // 
+            dataGridViewAulas.BackgroundColor = Color.Beige;
             dataGridViewAulas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewAulas.Location = new Point(12, 12);
             dataGridViewAulas.Margin = new Padding(2);
             dataGridViewAulas.Name = "dataGridViewAulas";
             dataGridViewAulas.ReadOnly = true;
             dataGridViewAulas.RowHeadersWidth = 62;
-            dataGridViewAulas.Size = new Size(1380, 622);
+            dataGridViewAulas.Size = new Size(961, 431);
             dataGridViewAulas.TabIndex = 0;
             dataGridViewAulas.CellContentClick += dataGridViewAulas_CellContentClick;
             // 
@@ -50,7 +51,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
-            ClientSize = new Size(1048, 494);
+            ClientSize = new Size(985, 470);
             Controls.Add(dataGridViewAulas);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);

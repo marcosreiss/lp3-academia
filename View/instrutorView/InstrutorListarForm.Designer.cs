@@ -35,26 +35,28 @@
             // 
             // dataGridViewInstrutor
             // 
+            dataGridViewInstrutor.BackgroundColor = Color.Beige;
             dataGridViewInstrutor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewInstrutor.Location = new Point(10, 10);
-            dataGridViewInstrutor.Margin = new Padding(2, 2, 2, 2);
+            dataGridViewInstrutor.Location = new Point(21, 26);
+            dataGridViewInstrutor.Margin = new Padding(2);
             dataGridViewInstrutor.Name = "dataGridViewInstrutor";
             dataGridViewInstrutor.RowHeadersWidth = 62;
-            dataGridViewInstrutor.Size = new Size(621, 341);
+            dataGridViewInstrutor.Size = new Size(822, 431);
             dataGridViewInstrutor.TabIndex = 0;
             // 
             // InstrutorListarForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
-            ClientSize = new Size(640, 360);
+            ClientSize = new Size(854, 490);
             Controls.Add(dataGridViewInstrutor);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "InstrutorListarForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Lista de Instrutores";
-            this.Load += new EventHandler(this.InstrutorListarForm_Load);
+            Load += InstrutorListarForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewInstrutor).EndInit();
             ResumeLayout(false);
         }

@@ -8,7 +8,7 @@ namespace lp3_academia.util
 
         public ConexaoBD()
         {
-            string strconexao = "server=localhost;userid=root;password=root;database=academiadb";
+            string strconexao = "server=localhost;userid=root;password=071103;database=academiadb";
             con = new MySqlConnection(strconexao);
         }
 
