@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             menuStrip1 = new MenuStrip();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             alunoToolStripMenuItem = new ToolStripMenuItem();
@@ -49,7 +50,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, aulasToolStripMenuItem, lIstarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(830, 38);
+            menuStrip1.Size = new Size(998, 38);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -64,7 +65,7 @@
             // 
             alunoToolStripMenuItem.BackColor = Color.Beige;
             alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            alunoToolStripMenuItem.Size = new Size(270, 38);
+            alunoToolStripMenuItem.Size = new Size(198, 38);
             alunoToolStripMenuItem.Text = "Aluno";
             alunoToolStripMenuItem.Click += alunoToolStripMenuItem_Click;
             // 
@@ -72,7 +73,7 @@
             // 
             instrutorToolStripMenuItem.BackColor = Color.Beige;
             instrutorToolStripMenuItem.Name = "instrutorToolStripMenuItem";
-            instrutorToolStripMenuItem.Size = new Size(270, 38);
+            instrutorToolStripMenuItem.Size = new Size(198, 38);
             instrutorToolStripMenuItem.Text = "Instrutor";
             instrutorToolStripMenuItem.Click += instrutorToolStripMenuItem_Click;
             // 
@@ -87,7 +88,7 @@
             // 
             criarAulaToolStripMenuItem.BackColor = Color.Beige;
             criarAulaToolStripMenuItem.Name = "criarAulaToolStripMenuItem";
-            criarAulaToolStripMenuItem.Size = new Size(270, 38);
+            criarAulaToolStripMenuItem.Size = new Size(223, 38);
             criarAulaToolStripMenuItem.Text = "Criar Aula";
             criarAulaToolStripMenuItem.Click += criarAulaToolStripMenuItem_Click;
             // 
@@ -95,7 +96,7 @@
             // 
             listarAulasToolStripMenuItem.BackColor = Color.Beige;
             listarAulasToolStripMenuItem.Name = "listarAulasToolStripMenuItem";
-            listarAulasToolStripMenuItem.Size = new Size(270, 38);
+            listarAulasToolStripMenuItem.Size = new Size(223, 38);
             listarAulasToolStripMenuItem.Text = "Listar Aulas";
             listarAulasToolStripMenuItem.Click += listarAulasToolStripMenuItem_Click;
             // 
@@ -110,7 +111,7 @@
             // 
             alunoListarToolStripMenuItem1.BackColor = Color.Beige;
             alunoListarToolStripMenuItem1.Name = "alunoListarToolStripMenuItem1";
-            alunoListarToolStripMenuItem1.Size = new Size(270, 38);
+            alunoListarToolStripMenuItem1.Size = new Size(198, 38);
             alunoListarToolStripMenuItem1.Text = "Aluno";
             alunoListarToolStripMenuItem1.Click += alunoListarToolStripMenuItem1_Click;
             // 
@@ -118,7 +119,7 @@
             // 
             instrutorListarToolStripMenuItem1.BackColor = Color.Beige;
             instrutorListarToolStripMenuItem1.Name = "instrutorListarToolStripMenuItem1";
-            instrutorListarToolStripMenuItem1.Size = new Size(270, 38);
+            instrutorListarToolStripMenuItem1.Size = new Size(198, 38);
             instrutorListarToolStripMenuItem1.Text = "Instrutor";
             instrutorListarToolStripMenuItem1.Click += instrutorListarToolStripMenuItem1_Click;
             // 
@@ -127,8 +128,9 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkBlue;
-            ClientSize = new Size(830, 474);
+            ClientSize = new Size(998, 611);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Form1";

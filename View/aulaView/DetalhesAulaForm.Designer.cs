@@ -48,10 +48,10 @@
             // 
             aulaNomelbl.AutoSize = true;
             aulaNomelbl.Font = new Font("Segoe UI", 11F);
-            aulaNomelbl.Location = new Point(64, 48);
+            aulaNomelbl.Location = new Point(80, 60);
             aulaNomelbl.Margin = new Padding(2, 0, 2, 0);
             aulaNomelbl.Name = "aulaNomelbl";
-            aulaNomelbl.Size = new Size(72, 25);
+            aulaNomelbl.Size = new Size(84, 30);
             aulaNomelbl.TabIndex = 1;
             aulaNomelbl.Text = "Nome: ";
             // 
@@ -59,10 +59,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F);
-            label1.Location = new Point(64, 157);
+            label1.Location = new Point(80, 196);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(98, 25);
+            label1.Size = new Size(111, 30);
             label1.TabIndex = 2;
             label1.Text = "Descrição:";
             // 
@@ -70,10 +70,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F);
-            label2.Location = new Point(449, 104);
+            label2.Location = new Point(561, 130);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(141, 25);
+            label2.Size = new Size(164, 30);
             label2.TabIndex = 3;
             label2.Text = "Horário de Fim:";
             // 
@@ -81,10 +81,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11F);
-            label3.Location = new Point(64, 104);
+            label3.Location = new Point(80, 130);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(157, 25);
+            label3.Size = new Size(180, 30);
             label3.TabIndex = 4;
             label3.Text = "Horário de Início:";
             // 
@@ -92,10 +92,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11F);
-            label4.Location = new Point(449, 48);
+            label4.Location = new Point(561, 60);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(176, 25);
+            label4.Size = new Size(204, 30);
             label4.TabIndex = 5;
             label4.Text = "Nome do Instrutor: ";
             // 
@@ -103,20 +103,21 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11F);
-            label5.Location = new Point(64, 269);
+            label5.Location = new Point(80, 336);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(187, 25);
+            label5.Size = new Size(210, 30);
             label5.TabIndex = 6;
             label5.Text = "Alunos Participantes:";
             // 
             // participantesDataGridView
             // 
             participantesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            participantesDataGridView.Location = new Point(64, 319);
+            participantesDataGridView.Location = new Point(80, 399);
+            participantesDataGridView.Margin = new Padding(4, 4, 4, 4);
             participantesDataGridView.Name = "participantesDataGridView";
             participantesDataGridView.RowHeadersWidth = 51;
-            participantesDataGridView.Size = new Size(932, 273);
+            participantesDataGridView.Size = new Size(1165, 341);
             participantesDataGridView.TabIndex = 7;
             // 
             // fecharDetalhesbtt
@@ -124,10 +125,10 @@
             fecharDetalhesbtt.BackColor = Color.MidnightBlue;
             fecharDetalhesbtt.Font = new Font("Segoe UI", 10F);
             fecharDetalhesbtt.ForeColor = SystemColors.ButtonHighlight;
-            fecharDetalhesbtt.Location = new Point(900, 632);
+            fecharDetalhesbtt.Location = new Point(1125, 790);
             fecharDetalhesbtt.Margin = new Padding(2);
             fecharDetalhesbtt.Name = "fecharDetalhesbtt";
-            fecharDetalhesbtt.Size = new Size(96, 34);
+            fecharDetalhesbtt.Size = new Size(120, 42);
             fecharDetalhesbtt.TabIndex = 10;
             fecharDetalhesbtt.Text = "Fechar";
             fecharDetalhesbtt.UseVisualStyleBackColor = false;
@@ -135,51 +136,56 @@
             // 
             // descricaoAulaTxt
             // 
-            descricaoAulaTxt.Location = new Point(167, 158);
+            descricaoAulaTxt.Location = new Point(209, 198);
+            descricaoAulaTxt.Margin = new Padding(4, 4, 4, 4);
             descricaoAulaTxt.Name = "descricaoAulaTxt";
             descricaoAulaTxt.ReadOnly = true;
-            descricaoAulaTxt.Size = new Size(231, 83);
+            descricaoAulaTxt.Size = new Size(288, 103);
             descricaoAulaTxt.TabIndex = 11;
             descricaoAulaTxt.Text = "";
             // 
             // nomeAulaTxt
             // 
-            nomeAulaTxt.Location = new Point(141, 49);
+            nomeAulaTxt.Location = new Point(176, 61);
+            nomeAulaTxt.Margin = new Padding(4, 4, 4, 4);
             nomeAulaTxt.Name = "nomeAulaTxt";
             nomeAulaTxt.ReadOnly = true;
-            nomeAulaTxt.Size = new Size(257, 27);
+            nomeAulaTxt.Size = new Size(320, 31);
             nomeAulaTxt.TabIndex = 12;
             // 
             // dataFimTxt
             // 
-            dataFimTxt.Location = new Point(630, 102);
+            dataFimTxt.Location = new Point(788, 128);
+            dataFimTxt.Margin = new Padding(4, 4, 4, 4);
             dataFimTxt.Name = "dataFimTxt";
             dataFimTxt.ReadOnly = true;
-            dataFimTxt.Size = new Size(166, 27);
+            dataFimTxt.Size = new Size(206, 31);
             dataFimTxt.TabIndex = 14;
             // 
             // dataInicioTxt
             // 
-            dataInicioTxt.Location = new Point(226, 102);
+            dataInicioTxt.Location = new Point(282, 128);
+            dataInicioTxt.Margin = new Padding(4, 4, 4, 4);
             dataInicioTxt.Name = "dataInicioTxt";
             dataInicioTxt.ReadOnly = true;
-            dataInicioTxt.Size = new Size(172, 27);
+            dataInicioTxt.Size = new Size(214, 31);
             dataInicioTxt.TabIndex = 15;
             // 
             // instrutorTxt
             // 
-            instrutorTxt.Location = new Point(630, 49);
+            instrutorTxt.Location = new Point(788, 61);
+            instrutorTxt.Margin = new Padding(4, 4, 4, 4);
             instrutorTxt.Name = "instrutorTxt";
             instrutorTxt.ReadOnly = true;
-            instrutorTxt.Size = new Size(162, 27);
+            instrutorTxt.Size = new Size(202, 31);
             instrutorTxt.TabIndex = 16;
             // 
             // DetalhesAulaForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
-            ClientSize = new Size(1038, 713);
+            ClientSize = new Size(1298, 891);
             Controls.Add(instrutorTxt);
             Controls.Add(dataInicioTxt);
             Controls.Add(dataFimTxt);
@@ -193,7 +199,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(aulaNomelbl);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "DetalhesAulaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DetalhesAulaForm";
             ((System.ComponentModel.ISupportInitialize)participantesDataGridView).EndInit();
             ResumeLayout(false);

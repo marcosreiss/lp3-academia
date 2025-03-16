@@ -54,5 +54,10 @@ namespace lp3_academia
         {
             this.Close(); // Fecha o formulário sem salvar
         }
+
+        private void contratacaoInstrutordateTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
