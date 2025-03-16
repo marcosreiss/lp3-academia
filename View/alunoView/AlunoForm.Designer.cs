@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlunoForm));
             nomeAlunolbl = new Label();
             nomeAlunotxt = new TextBox();
             cpfAlunotxt = new TextBox();
             cpfAlunolbl = new Label();
             telAlunolbl = new Label();
             telAlunotxt = new TextBox();
-            salvarAlunobtt = new Button();
-            cancelarAlunobtt = new Button();
             nascAlunolbl = new Label();
             nascAlunoDataTime = new DateTimePicker();
             label1 = new Label();
             matrículaAlunoDataTime = new DateTimePicker();
             groupBox1 = new GroupBox();
+            toolStrip1 = new ToolStrip();
+            salvarAlunoTsp = new ToolStripButton();
+            cancelarAlunoTsp = new ToolStripButton();
             groupBox1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // nomeAlunolbl
@@ -98,32 +101,6 @@
             telAlunotxt.Size = new Size(296, 37);
             telAlunotxt.TabIndex = 5;
             // 
-            // salvarAlunobtt
-            // 
-            salvarAlunobtt.BackColor = Color.MidnightBlue;
-            salvarAlunobtt.Font = new Font("Segoe UI", 10F);
-            salvarAlunobtt.ForeColor = SystemColors.ButtonHighlight;
-            salvarAlunobtt.Location = new Point(491, 395);
-            salvarAlunobtt.Name = "salvarAlunobtt";
-            salvarAlunobtt.Size = new Size(120, 42);
-            salvarAlunobtt.TabIndex = 6;
-            salvarAlunobtt.Text = "Salvar";
-            salvarAlunobtt.UseVisualStyleBackColor = false;
-            salvarAlunobtt.Click += salvarAlunobtt_Click;
-            // 
-            // cancelarAlunobtt
-            // 
-            cancelarAlunobtt.BackColor = Color.MidnightBlue;
-            cancelarAlunobtt.Font = new Font("Segoe UI", 10F);
-            cancelarAlunobtt.ForeColor = SystemColors.ButtonHighlight;
-            cancelarAlunobtt.Location = new Point(350, 395);
-            cancelarAlunobtt.Name = "cancelarAlunobtt";
-            cancelarAlunobtt.Size = new Size(120, 42);
-            cancelarAlunobtt.TabIndex = 7;
-            cancelarAlunobtt.Text = "Cancelar";
-            cancelarAlunobtt.UseVisualStyleBackColor = false;
-            cancelarAlunobtt.Click += cancelarAlunobtt_Click;
-            // 
             // nascAlunolbl
             // 
             nascAlunolbl.AutoSize = true;
@@ -170,12 +147,48 @@
             groupBox1.Controls.Add(telAlunotxt);
             groupBox1.Controls.Add(cpfAlunotxt);
             groupBox1.Controls.Add(telAlunolbl);
-            groupBox1.Location = new Point(29, 21);
+            groupBox1.Location = new Point(24, 78);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(602, 351);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             groupBox1.Text = "Aluno";
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.BackColor = Color.DarkBlue;
+            toolStrip1.ImageScalingSize = new Size(24, 24);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { salvarAlunoTsp, cancelarAlunoTsp });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(657, 37);
+            toolStrip1.TabIndex = 13;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // salvarAlunoTsp
+            // 
+            salvarAlunoTsp.Alignment = ToolStripItemAlignment.Right;
+            salvarAlunoTsp.Font = new Font("Segoe UI", 10F);
+            salvarAlunoTsp.ForeColor = SystemColors.ButtonHighlight;
+            salvarAlunoTsp.Image = (Image)resources.GetObject("salvarAlunoTsp.Image");
+            salvarAlunoTsp.ImageTransparentColor = Color.Magenta;
+            salvarAlunoTsp.Name = "salvarAlunoTsp";
+            salvarAlunoTsp.Size = new Size(93, 32);
+            salvarAlunoTsp.Text = "Salvar";
+            salvarAlunoTsp.Click += salvarAlunoTsp_Click;
+            // 
+            // cancelarAlunoTsp
+            // 
+            cancelarAlunoTsp.Alignment = ToolStripItemAlignment.Right;
+            cancelarAlunoTsp.Font = new Font("Segoe UI", 10F);
+            cancelarAlunoTsp.ForeColor = SystemColors.ButtonHighlight;
+            cancelarAlunoTsp.Image = (Image)resources.GetObject("cancelarAlunoTsp.Image");
+            cancelarAlunoTsp.ImageTransparentColor = Color.Magenta;
+            cancelarAlunoTsp.Name = "cancelarAlunoTsp";
+            cancelarAlunoTsp.RightToLeft = RightToLeft.No;
+            cancelarAlunoTsp.Size = new Size(114, 32);
+            cancelarAlunoTsp.Text = "Cancelar";
+            cancelarAlunoTsp.Click += cancelarAlunoTsp_Click;
             // 
             // AlunoForm
             // 
@@ -183,15 +196,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(657, 474);
+            Controls.Add(toolStrip1);
             Controls.Add(groupBox1);
-            Controls.Add(cancelarAlunobtt);
-            Controls.Add(salvarAlunobtt);
             Name = "AlunoForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Aluno";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -202,12 +217,13 @@
         private Label cpfAlunolbl;
         private Label telAlunolbl;
         private TextBox telAlunotxt;
-        private Button salvarAlunobtt;
-        private Button cancelarAlunobtt;
         private Label nascAlunolbl;
         private DateTimePicker nascAlunoDataTime;
         private Label label1;
         private DateTimePicker matrículaAlunoDataTime;
         private GroupBox groupBox1;
+        private ToolStrip toolStrip1;
+        private ToolStripButton cancelarAlunoTsp;
+        private ToolStripButton salvarAlunoTsp;
     }
 }

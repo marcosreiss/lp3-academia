@@ -43,9 +43,11 @@
             descAulalbl = new Label();
             nomeAulatxt = new TextBox();
             aulaNomelbl = new Label();
-            cancelarAulabtt = new Button();
-            salvarAulabtt = new Button();
+            toolStrip1 = new ToolStrip();
+            salvarAulaTsp = new ToolStripButton();
+            cancelarAulaTsp = new ToolStripButton();
             groupBox1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -63,7 +65,7 @@
             groupBox1.Controls.Add(descAulalbl);
             groupBox1.Controls.Add(nomeAulatxt);
             groupBox1.Controls.Add(aulaNomelbl);
-            groupBox1.Location = new Point(35, 22);
+            groupBox1.Location = new Point(37, 60);
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2);
@@ -76,7 +78,7 @@
             // 
             participantesclb.FormattingEnabled = true;
             participantesclb.Location = new Point(282, 360);
-            participantesclb.Margin = new Padding(4, 4, 4, 4);
+            participantesclb.Margin = new Padding(4);
             participantesclb.Name = "participantesclb";
             participantesclb.Size = new Size(230, 144);
             participantesclb.TabIndex = 13;
@@ -96,7 +98,7 @@
             // 
             instrutorcmb.FormattingEnabled = true;
             instrutorcmb.Location = new Point(190, 281);
-            instrutorcmb.Margin = new Padding(4, 4, 4, 4);
+            instrutorcmb.Margin = new Padding(4);
             instrutorcmb.Name = "instrutorcmb";
             instrutorcmb.Size = new Size(188, 33);
             instrutorcmb.TabIndex = 11;
@@ -202,33 +204,41 @@
             aulaNomelbl.TabIndex = 0;
             aulaNomelbl.Text = "Nome: ";
             // 
-            // cancelarAulabtt
+            // toolStrip1
             // 
-            cancelarAulabtt.BackColor = Color.MidnightBlue;
-            cancelarAulabtt.Font = new Font("Segoe UI", 10F);
-            cancelarAulabtt.ForeColor = SystemColors.ButtonHighlight;
-            cancelarAulabtt.Location = new Point(443, 589);
-            cancelarAulabtt.Margin = new Padding(2);
-            cancelarAulabtt.Name = "cancelarAulabtt";
-            cancelarAulabtt.Size = new Size(120, 42);
-            cancelarAulabtt.TabIndex = 8;
-            cancelarAulabtt.Text = "Cancelar";
-            cancelarAulabtt.UseVisualStyleBackColor = false;
-            cancelarAulabtt.Click += cancelarAulabtt_Click;
+            toolStrip1.BackColor = Color.DarkBlue;
+            toolStrip1.ImageScalingSize = new Size(24, 24);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { salvarAulaTsp, cancelarAulaTsp });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(758, 37);
+            toolStrip1.TabIndex = 14;
+            toolStrip1.Text = "toolStrip1";
             // 
-            // salvarAulabtt
+            // salvarAulaTsp
             // 
-            salvarAulabtt.BackColor = Color.MidnightBlue;
-            salvarAulabtt.Font = new Font("Segoe UI", 10F);
-            salvarAulabtt.ForeColor = SystemColors.ButtonHighlight;
-            salvarAulabtt.Location = new Point(591, 589);
-            salvarAulabtt.Margin = new Padding(2);
-            salvarAulabtt.Name = "salvarAulabtt";
-            salvarAulabtt.Size = new Size(120, 42);
-            salvarAulabtt.TabIndex = 9;
-            salvarAulabtt.Text = "Salvar";
-            salvarAulabtt.UseVisualStyleBackColor = false;
-            salvarAulabtt.Click += salvarAulabtt_Click;
+            salvarAulaTsp.Alignment = ToolStripItemAlignment.Right;
+            salvarAulaTsp.Font = new Font("Segoe UI", 10F);
+            salvarAulaTsp.ForeColor = SystemColors.ButtonHighlight;
+            salvarAulaTsp.Image = (Image)resources.GetObject("salvarAulaTsp.Image");
+            salvarAulaTsp.ImageTransparentColor = Color.Magenta;
+            salvarAulaTsp.Name = "salvarAulaTsp";
+            salvarAulaTsp.Size = new Size(93, 32);
+            salvarAulaTsp.Text = "Salvar";
+            salvarAulaTsp.Click += salvarAulaTsp_Click;
+            // 
+            // cancelarAulaTsp
+            // 
+            cancelarAulaTsp.Alignment = ToolStripItemAlignment.Right;
+            cancelarAulaTsp.Font = new Font("Segoe UI", 10F);
+            cancelarAulaTsp.ForeColor = SystemColors.ButtonHighlight;
+            cancelarAulaTsp.Image = (Image)resources.GetObject("cancelarAulaTsp.Image");
+            cancelarAulaTsp.ImageTransparentColor = Color.Magenta;
+            cancelarAulaTsp.Name = "cancelarAulaTsp";
+            cancelarAulaTsp.RightToLeft = RightToLeft.No;
+            cancelarAulaTsp.Size = new Size(114, 32);
+            cancelarAulaTsp.Text = "Cancelar";
+            cancelarAulaTsp.Click += cancelarAulaTsp_Click;
             // 
             // CriarAulaForm
             // 
@@ -236,8 +246,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(758, 648);
-            Controls.Add(salvarAulabtt);
-            Controls.Add(cancelarAulabtt);
+            Controls.Add(toolStrip1);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
@@ -246,7 +255,10 @@
             Text = "Criar Aula";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -262,10 +274,11 @@
         private ComboBox dtIniciocmbox;
         private Label dtIniciolbl;
         private Label idInstrutorlbl;
-        private Button cancelarAulabtt;
-        private Button salvarAulabtt;
         private CheckedListBox participantesclb;
         private Label label1;
         private ComboBox instrutorcmb;
+        private ToolStrip toolStrip1;
+        private ToolStripButton salvarAulaTsp;
+        private ToolStripButton cancelarAulaTsp;
     }
 }

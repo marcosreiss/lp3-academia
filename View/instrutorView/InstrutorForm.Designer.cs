@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cancelarInstrutorbtt = new Button();
-            salvarInstrutorbtt = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstrutorForm));
             especialidadeInstrutortxt = new TextBox();
             especInstrutorlbl = new Label();
             cpfInstrutortxt = new TextBox();
@@ -39,34 +38,12 @@
             label1 = new Label();
             contratacaoInstrutordateTime = new DateTimePicker();
             groupBox1 = new GroupBox();
+            toolStrip1 = new ToolStrip();
+            salvarInstrutorTsp = new ToolStripButton();
+            cancelarInstrutorTsp = new ToolStripButton();
             groupBox1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // cancelarInstrutorbtt
-            // 
-            cancelarInstrutorbtt.BackColor = Color.MidnightBlue;
-            cancelarInstrutorbtt.Font = new Font("Segoe UI", 10F);
-            cancelarInstrutorbtt.ForeColor = SystemColors.ButtonHighlight;
-            cancelarInstrutorbtt.Location = new Point(347, 410);
-            cancelarInstrutorbtt.Name = "cancelarInstrutorbtt";
-            cancelarInstrutorbtt.Size = new Size(119, 41);
-            cancelarInstrutorbtt.TabIndex = 15;
-            cancelarInstrutorbtt.Text = "Cancelar";
-            cancelarInstrutorbtt.UseVisualStyleBackColor = false;
-            cancelarInstrutorbtt.Click += cancelarInstrutorbtt_Click;
-            // 
-            // salvarInstrutorbtt
-            // 
-            salvarInstrutorbtt.BackColor = Color.MidnightBlue;
-            salvarInstrutorbtt.Font = new Font("Segoe UI", 10F);
-            salvarInstrutorbtt.ForeColor = SystemColors.ButtonHighlight;
-            salvarInstrutorbtt.Location = new Point(501, 410);
-            salvarInstrutorbtt.Name = "salvarInstrutorbtt";
-            salvarInstrutorbtt.Size = new Size(120, 41);
-            salvarInstrutorbtt.TabIndex = 14;
-            salvarInstrutorbtt.Text = "Salvar";
-            salvarInstrutorbtt.UseVisualStyleBackColor = false;
-            salvarInstrutorbtt.Click += salvarInstrutorbtt_Click;
             // 
             // especialidadeInstrutortxt
             // 
@@ -150,12 +127,48 @@
             groupBox1.Controls.Add(cpfInstrutortxt);
             groupBox1.Controls.Add(especInstrutorlbl);
             groupBox1.Controls.Add(especialidadeInstrutortxt);
-            groupBox1.Location = new Point(23, 15);
+            groupBox1.Location = new Point(12, 56);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(618, 389);
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             groupBox1.Text = "Instrutor";
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.BackColor = Color.DarkBlue;
+            toolStrip1.ImageScalingSize = new Size(24, 24);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { salvarInstrutorTsp, cancelarInstrutorTsp });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(657, 37);
+            toolStrip1.TabIndex = 19;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // salvarInstrutorTsp
+            // 
+            salvarInstrutorTsp.Alignment = ToolStripItemAlignment.Right;
+            salvarInstrutorTsp.Font = new Font("Segoe UI", 10F);
+            salvarInstrutorTsp.ForeColor = SystemColors.ButtonHighlight;
+            salvarInstrutorTsp.Image = (Image)resources.GetObject("salvarInstrutorTsp.Image");
+            salvarInstrutorTsp.ImageTransparentColor = Color.Magenta;
+            salvarInstrutorTsp.Name = "salvarInstrutorTsp";
+            salvarInstrutorTsp.Size = new Size(93, 32);
+            salvarInstrutorTsp.Text = "Salvar";
+            salvarInstrutorTsp.ToolTipText = "Salvar";
+            salvarInstrutorTsp.Click += salvarInstrutorTsp_Click;
+            // 
+            // cancelarInstrutorTsp
+            // 
+            cancelarInstrutorTsp.Alignment = ToolStripItemAlignment.Right;
+            cancelarInstrutorTsp.Font = new Font("Segoe UI", 10F);
+            cancelarInstrutorTsp.ForeColor = SystemColors.ButtonHighlight;
+            cancelarInstrutorTsp.Image = (Image)resources.GetObject("cancelarInstrutorTsp.Image");
+            cancelarInstrutorTsp.ImageTransparentColor = Color.Magenta;
+            cancelarInstrutorTsp.Name = "cancelarInstrutorTsp";
+            cancelarInstrutorTsp.Size = new Size(114, 32);
+            cancelarInstrutorTsp.Text = "Cancelar";
+            cancelarInstrutorTsp.Click += cancelarInstrutorTsp_Click;
             // 
             // InstrutorForm
             // 
@@ -163,21 +176,20 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(657, 474);
+            Controls.Add(toolStrip1);
             Controls.Add(groupBox1);
-            Controls.Add(cancelarInstrutorbtt);
-            Controls.Add(salvarInstrutorbtt);
             Name = "InstrutorForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Instrutor";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Button cancelarInstrutorbtt;
-        private Button salvarInstrutorbtt;
         private TextBox especialidadeInstrutortxt;
         private Label especInstrutorlbl;
         private TextBox cpfInstrutortxt;
@@ -187,5 +199,8 @@
         private Label label1;
         private DateTimePicker contratacaoInstrutordateTime;
         private GroupBox groupBox1;
+        private ToolStrip toolStrip1;
+        private ToolStripButton cancelarInstrutorTsp;
+        private ToolStripButton salvarInstrutorTsp;
     }
 }
