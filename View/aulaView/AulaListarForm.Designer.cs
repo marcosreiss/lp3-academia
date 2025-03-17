@@ -35,23 +35,24 @@
             // 
             // dataGridViewAulas
             // 
+            dataGridViewAulas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewAulas.BackgroundColor = Color.Beige;
             dataGridViewAulas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewAulas.Location = new Point(12, 12);
+            dataGridViewAulas.Location = new Point(10, 10);
             dataGridViewAulas.Margin = new Padding(2);
             dataGridViewAulas.Name = "dataGridViewAulas";
             dataGridViewAulas.ReadOnly = true;
             dataGridViewAulas.RowHeadersWidth = 62;
-            dataGridViewAulas.Size = new Size(961, 431);
+            dataGridViewAulas.Size = new Size(860, 400);
             dataGridViewAulas.TabIndex = 0;
             dataGridViewAulas.CellContentClick += dataGridViewAulas_CellContentClick;
             // 
             // AulaListarForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
-            ClientSize = new Size(985, 470);
+            ClientSize = new Size(882, 433);
             Controls.Add(dataGridViewAulas);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);

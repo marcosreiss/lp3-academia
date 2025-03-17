@@ -53,6 +53,7 @@ namespace lp3_academia
                 cpfInstrutortxt.Clear();
                 especialidadeInstrutortxt.Clear();
                 contratacaoInstrutordateTime.Value = DateTime.Today;
+                this.Close();
             }
             else
             {

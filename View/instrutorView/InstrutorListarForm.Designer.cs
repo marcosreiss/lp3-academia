@@ -35,21 +35,22 @@
             // 
             // dataGridViewInstrutor
             // 
+            dataGridViewInstrutor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewInstrutor.BackgroundColor = Color.Beige;
             dataGridViewInstrutor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewInstrutor.Location = new Point(21, 26);
+            dataGridViewInstrutor.Location = new Point(17, 21);
             dataGridViewInstrutor.Margin = new Padding(2);
             dataGridViewInstrutor.Name = "dataGridViewInstrutor";
             dataGridViewInstrutor.RowHeadersWidth = 62;
-            dataGridViewInstrutor.Size = new Size(822, 431);
+            dataGridViewInstrutor.Size = new Size(860, 400);
             dataGridViewInstrutor.TabIndex = 0;
             // 
             // InstrutorListarForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
-            ClientSize = new Size(854, 490);
+            ClientSize = new Size(882, 433);
             Controls.Add(dataGridViewInstrutor);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);

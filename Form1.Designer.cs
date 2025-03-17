@@ -50,7 +50,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, aulasToolStripMenuItem, lIstarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1220, 38);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(1032, 33);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -58,14 +59,14 @@
             // 
             cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alunoToolStripMenuItem, instrutorToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(115, 34);
+            cadastroToolStripMenuItem.Size = new Size(101, 29);
             cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // alunoToolStripMenuItem
             // 
             alunoToolStripMenuItem.BackColor = Color.Beige;
             alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            alunoToolStripMenuItem.Size = new Size(198, 38);
+            alunoToolStripMenuItem.Size = new Size(170, 30);
             alunoToolStripMenuItem.Text = "Aluno";
             alunoToolStripMenuItem.Click += alunoToolStripMenuItem_Click;
             // 
@@ -73,7 +74,7 @@
             // 
             instrutorToolStripMenuItem.BackColor = Color.Beige;
             instrutorToolStripMenuItem.Name = "instrutorToolStripMenuItem";
-            instrutorToolStripMenuItem.Size = new Size(198, 38);
+            instrutorToolStripMenuItem.Size = new Size(170, 30);
             instrutorToolStripMenuItem.Text = "Instrutor";
             instrutorToolStripMenuItem.Click += instrutorToolStripMenuItem_Click;
             // 
@@ -81,14 +82,14 @@
             // 
             aulasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { criarAulaToolStripMenuItem, listarAulasToolStripMenuItem });
             aulasToolStripMenuItem.Name = "aulasToolStripMenuItem";
-            aulasToolStripMenuItem.Size = new Size(80, 34);
+            aulasToolStripMenuItem.Size = new Size(72, 29);
             aulasToolStripMenuItem.Text = "Aulas";
             // 
             // criarAulaToolStripMenuItem
             // 
             criarAulaToolStripMenuItem.BackColor = Color.Beige;
             criarAulaToolStripMenuItem.Name = "criarAulaToolStripMenuItem";
-            criarAulaToolStripMenuItem.Size = new Size(223, 38);
+            criarAulaToolStripMenuItem.Size = new Size(194, 30);
             criarAulaToolStripMenuItem.Text = "Criar Aula";
             criarAulaToolStripMenuItem.Click += criarAulaToolStripMenuItem_Click;
             // 
@@ -96,7 +97,7 @@
             // 
             listarAulasToolStripMenuItem.BackColor = Color.Beige;
             listarAulasToolStripMenuItem.Name = "listarAulasToolStripMenuItem";
-            listarAulasToolStripMenuItem.Size = new Size(223, 38);
+            listarAulasToolStripMenuItem.Size = new Size(194, 30);
             listarAulasToolStripMenuItem.Text = "Listar Aulas";
             listarAulasToolStripMenuItem.Click += listarAulasToolStripMenuItem_Click;
             // 
@@ -104,14 +105,14 @@
             // 
             lIstarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alunoListarToolStripMenuItem1, instrutorListarToolStripMenuItem1 });
             lIstarToolStripMenuItem.Name = "lIstarToolStripMenuItem";
-            lIstarToolStripMenuItem.Size = new Size(79, 34);
+            lIstarToolStripMenuItem.Size = new Size(71, 29);
             lIstarToolStripMenuItem.Text = "Listar";
             // 
             // alunoListarToolStripMenuItem1
             // 
             alunoListarToolStripMenuItem1.BackColor = Color.Beige;
             alunoListarToolStripMenuItem1.Name = "alunoListarToolStripMenuItem1";
-            alunoListarToolStripMenuItem1.Size = new Size(198, 38);
+            alunoListarToolStripMenuItem1.Size = new Size(170, 30);
             alunoListarToolStripMenuItem1.Text = "Aluno";
             alunoListarToolStripMenuItem1.Click += alunoListarToolStripMenuItem1_Click;
             // 
@@ -119,20 +120,21 @@
             // 
             instrutorListarToolStripMenuItem1.BackColor = Color.Beige;
             instrutorListarToolStripMenuItem1.Name = "instrutorListarToolStripMenuItem1";
-            instrutorListarToolStripMenuItem1.Size = new Size(198, 38);
+            instrutorListarToolStripMenuItem1.Size = new Size(170, 30);
             instrutorListarToolStripMenuItem1.Text = "Instrutor";
             instrutorListarToolStripMenuItem1.Click += instrutorListarToolStripMenuItem1_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkBlue;
-            ClientSize = new Size(1220, 764);
+            ClientSize = new Size(1032, 653);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Academia";

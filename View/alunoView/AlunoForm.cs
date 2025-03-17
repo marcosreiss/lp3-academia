@@ -49,6 +49,7 @@ namespace lp3_academia
                 telAlunotxt.Clear();
                 nascAlunoDataTime.Value = DateTime.Today;
                 matrículaAlunoDataTime.Value = DateTime.Today;
+                this.Close();
             }
             else
             {

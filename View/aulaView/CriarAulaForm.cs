@@ -136,6 +136,7 @@ namespace lp3_academia.aulaView
                 {
                     participantesclb.SetItemChecked(i, false);
                 }
+                this.Close();
             }
             else
             {

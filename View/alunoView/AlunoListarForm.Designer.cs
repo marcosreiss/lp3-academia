@@ -35,21 +35,22 @@
             // 
             // dataGridViewAlunos
             // 
+            dataGridViewAlunos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewAlunos.BackgroundColor = Color.Beige;
             dataGridViewAlunos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewAlunos.Location = new Point(11, 21);
+            dataGridViewAlunos.Location = new Point(9, 17);
             dataGridViewAlunos.Margin = new Padding(2);
             dataGridViewAlunos.Name = "dataGridViewAlunos";
             dataGridViewAlunos.RowHeadersWidth = 62;
-            dataGridViewAlunos.Size = new Size(964, 473);
+            dataGridViewAlunos.Size = new Size(860, 400);
             dataGridViewAlunos.TabIndex = 0;
             // 
             // AlunoListarForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
-            ClientSize = new Size(986, 534);
+            ClientSize = new Size(882, 433);
             Controls.Add(dataGridViewAlunos);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
